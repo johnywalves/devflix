@@ -12,6 +12,6 @@ export type CategoryProps = {
   titulo: string
   link?: string
   cor: string
-  link_extra: LinkExtraProps
+  link_extra?: LinkExtraProps
   videos: Array<VideosProps>
 }
