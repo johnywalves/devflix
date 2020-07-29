@@ -1,6 +1,6 @@
 {
-  "name": "React Avançado - Boilerplate",
-  "short_name": "React Avançado",
+  "name": "Devflix",
+  "short_name": "Devflix",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#06092B",
-  "description": "Boilerlate utilizando Typescript, React, NextJS e Styled Components!",
+  "description": "Sua plataforma de ensino a distância para tecnologia e afins",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#06092B"

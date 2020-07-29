@@ -1,6 +1,6 @@
-![React Avançado](https://raw.githubusercontent.com/React-Avancado/boilerplate/master/public/img/logo-gh.svg)
+![Devflix](https://raw.githubusercontent.com/johnywalves/devflix/master/public/img/logo.png)
 
-This is a [Next.js](https://nextjs.org/) boilerplate to be used in a course called [React Avançado](https://reactavancado.com.br/).
+This is a [Next.js](https://nextjs.org/) boilerplate
 
 ## What is inside?
 
