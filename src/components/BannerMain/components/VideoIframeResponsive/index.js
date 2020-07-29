@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { VideoContainer, ResponsiveIframe } from './styles';
+import { VideoContainer, ResponsiveIframe } from './styles'
 
 function YouTubeIframeResponsive({ youtubeID }) {
   return (
@@ -13,7 +13,7 @@ function YouTubeIframeResponsive({ youtubeID }) {
         allowFullScreen
       />
     </VideoContainer>
-  );
+  )
 }
 
-export default YouTubeIframeResponsive;
+export default YouTubeIframeResponsive

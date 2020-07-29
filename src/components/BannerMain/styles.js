@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const ContentAreaContainer = styled.section`
   margin-left: 5%;
@@ -13,7 +13,7 @@ export const ContentAreaContainer = styled.section`
     padding-top: 100px;
     flex-direction: column;
   }
-`;
+`
 
 ContentAreaContainer.Item = styled.div`
   width: 50%;
@@ -22,7 +22,7 @@ ContentAreaContainer.Item = styled.div`
   @media (max-width: 800px) {
     width: 100%;
   }
-`;
+`
 
 ContentAreaContainer.Category = styled.h1`
   font-family: Roboto;
@@ -33,7 +33,7 @@ ContentAreaContainer.Category = styled.h1`
   display: flex;
   align-items: center;
   text-align: center;
-  display: inline-block; 
+  display: inline-block;
   padding: 25px;
   line-height: 1;
   border-radius: 4px;
@@ -43,13 +43,13 @@ ContentAreaContainer.Category = styled.h1`
     font-size: 18px;
     padding: 10px;
   }
-`;
+`
 
 ContentAreaContainer.Description = styled.p`
   @media (max-width: 800px) {
     display: none;
   }
-`;
+`
 
 ContentAreaContainer.Title = styled.h2`
   font-style: normal;
@@ -63,13 +63,13 @@ ContentAreaContainer.Title = styled.h2`
     font-size: 32px;
     text-align: center;
   }
-`;
+`
 
 export const BannerMainContainer = styled.section`
   height: 80vh;
   position: relative;
   color: #fff;
-  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`}; 
+  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`};
   background-size: cover;
   background-position: center;
   @media (max-width: 800px) {
@@ -79,7 +79,7 @@ export const BannerMainContainer = styled.section`
 
   &:after,
   &:before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: 0;
@@ -91,14 +91,14 @@ export const BannerMainContainer = styled.section`
   &:before {
     top: 0;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
   }
 
   &:after {
     bottom: 0;
     background: linear-gradient(0deg, #141414 0%, transparent 100%);
   }
-`;
+`
 
 export const WatchButton = styled.button`
   font-family: 'Roboto', sans-serif;
@@ -116,10 +116,10 @@ export const WatchButton = styled.button`
   color: var(--black);
   background: var(--white);
   border-color: var(--black);
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   display: none;
   margin: 0 auto;
   @media (max-width: 800px) {
     display: block;
   }
-`;
+`

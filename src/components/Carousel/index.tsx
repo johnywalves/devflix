@@ -2,26 +2,22 @@ import React from 'react'
 
 import { CategoryProps, VideosProps } from 'interfaces'
 
-import {
-  VideoCardGroupContainer,
-  VideoCardList,
-  Title,
-  ExtraLink
-} from './styles'
+import { CarrouselContainer, Title, ExtraLink } from './styles'
 import VideoCard from './components/VideoCard'
+import Slider, { SliderItem } from './components/Slider'
 
-type VideoCardGroupProps = {
+type CarrouselProps = {
   ignoreFirstVideo: boolean
   category: CategoryProps
 }
 
-function VideoCardGroup({ ignoreFirstVideo, category }: VideoCardGroupProps) {
+function Carrousel({ ignoreFirstVideo, category }: CarrouselProps) {
   const categoryTitle = category.titulo
   const categoryColor = category.cor
   const categoryExtraLink = category.link_extra
   const videos = category.videos
   return (
-    <VideoCardGroupContainer>
+    <CarrouselContainer>
       {categoryTitle && (
         <>
           <Title style={{ backgroundColor: categoryColor || 'red' }}>
@@ -34,25 +30,25 @@ function VideoCardGroup({ ignoreFirstVideo, category }: VideoCardGroupProps) {
           )}
         </>
       )}
-      <VideoCardList>
+      <Slider>
         {videos.map((video: VideosProps, index: number) => {
           if (ignoreFirstVideo && index === 0) {
             return null
           }
 
           return (
-            <li key={video.titulo}>
+            <SliderItem key={video.titulo}>
               <VideoCard
                 videoTitle={video.titulo}
                 videoURL={video.url}
                 categoryColor={categoryColor}
               />
-            </li>
+            </SliderItem>
           )
         })}
-      </VideoCardList>
-    </VideoCardGroupContainer>
+      </Slider>
+    </CarrouselContainer>
   )
 }
 
-export default VideoCardGroup
+export default Carrousel

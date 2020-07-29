@@ -25,6 +25,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx", "src/components/Carousel/components/VideoCard/styles.js", "src/components/Carousel/components/VideoCard/index.js"
   ]
 }
