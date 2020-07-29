@@ -1,8 +1,6 @@
 ![Devflix](https://raw.githubusercontent.com/johnywalves/devflix/master/public/img/logo.png)
 
-This is a [Next.js](https://nextjs.org/) boilerplate
-
-## What is inside?
+## What is inside
 
 This project uses lot of stuff as:
 
