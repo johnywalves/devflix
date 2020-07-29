@@ -11,8 +11,18 @@ const Footer = () => {
         />
       </a>
       <p>
-        Orgulhosamente criado durante a{' '}
-        <a href="https://www.alura.com.br/">Imersão React da Alura</a>
+        Orgulhosamente criado por{' '}
+        <a
+          href="https://www.johnywalves.com.br/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Johny W. Alves
+        </a>{' '}
+        durante a{' '}
+        <a href="https://www.alura.com.br/" target="_blank" rel="noreferrer">
+          Imersão React da Alura
+        </a>
       </p>
     </FooterBase>
   )

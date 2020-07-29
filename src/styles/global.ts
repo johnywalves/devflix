@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
         --white: #FFFFFF;
         --frontEnd: #6BD1FF;
         --backEnd: #00C86F;
+        --background: #141414;
     }
 
     html {
@@ -34,6 +35,20 @@ const GlobalStyles = createGlobalStyle`
     a {
         color: inherit;
     } 
+
+    #__next {
+        --bodyPaddingTop: 94px;
+        padding-top: var(--bodyPaddingTop);
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (max-width: 800px) {
+        #__next {
+            --bodyPaddingTop: 40px;
+            padding-top: var(--bodyPaddingTop);
+        }
+    }
 `
 
 export default GlobalStyles
