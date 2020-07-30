@@ -38,7 +38,7 @@ const Container = styled.ul`
       left: 50%;
       top: 50%;
       content: '';
-      background-color: var(--white);
+      background-color: #ffffff;
       display: block;
       height: 3rem;
       width: 0.5rem;

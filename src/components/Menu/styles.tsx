@@ -24,6 +24,32 @@ export const Nav = styled.nav`
   }
 `
 
+export const Commands = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+
+export const Astro = styled.div`
+  margin-left: 2rem;
+  width: 30px;
+  height: 30px;
+  display: block;
+  border-radius: 50%;
+  z-index: 1;
+  border: solid 1px var(--background);
+  transition: all 0.5s cubic-bezier(0, 0.92, 0.27, 0.82);
+  cursor: pointer;
+  background-color: var(--background);
+  box-shadow: inset 2px -2px 0px 0px #ffffff, inset 8px -8px 0px 0px #d8e8f7;
+
+  .light & {
+    background-color: #ffdb01 !important;
+    box-shadow: inset -4px 0px 0px #ff8603, inset 2px 0px 0px #ffffffcc,
+      inset -5px 0px 0px 2px #ffd201, 0px 0px 0px 8px #ffd20133;
+  }
+`
+
 export const Logo = styled.img`
   max-width: 168px;
 

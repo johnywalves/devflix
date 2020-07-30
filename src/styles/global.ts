@@ -8,7 +8,21 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    :root {
+
+
+    html {
+        font-size: 62.5%;
+    }
+
+    html, body, #__next {
+        height: 100%;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+    body {
         --primary: #ec1d8c;
         --black: #030303;
         --blackLighter: #9E9E9E;
@@ -22,16 +36,18 @@ const GlobalStyles = createGlobalStyle`
         --colorSkin: #ffb8b8;
     }
 
-    html {
-        font-size: 62.5%;
-    }
-
-    html, body, #__next {
-        height: 100%;
-    }
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    body.dark {
+        --primary: #ec1d8c;
+        --black: #FFFFFF;
+        --blackLighter: #DFDFDF;
+        --grayLight: #F5F5F5;
+        --grayMedium: #e5e5e5; 
+        --white: #030303;
+        --frontEnd: #6BD1FF;
+        --backEnd: #00C86F;
+        --background: #202020;
+        --backgroundInput: #3d3d3d;
+        --colorSkin: #ffb8b8;
     }
 
     a {

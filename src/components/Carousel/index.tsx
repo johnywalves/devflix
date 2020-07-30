@@ -14,9 +14,9 @@ const getFontColor = (background: string) => {
   const blue: number = parseInt(color.substring(4, 6), 16)
 
   if (red * 0.299 + green * 0.587 + blue * 0.114 > 186) {
-    return 'var(--black)'
+    return '#030303'
   } else {
-    return 'var(--white)'
+    return '#ffffff'
   }
 }
 

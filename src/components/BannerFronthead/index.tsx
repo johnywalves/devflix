@@ -8,8 +8,7 @@ const BannerFronthead = () => {
       <Explain>
         <Title>
           Plataforma para compartilhando de informação para área da{' '}
-          <span>desenvolvimento</span> de software em
-          <br /> lingua brasileira
+          <span>desenvolvimento</span> de software em lígua brasileira
         </Title>
         <Description>
           Desenvolvidor por{' '}

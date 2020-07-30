@@ -19,7 +19,7 @@ export const Main = styled.main`
     padding: 1rem 1.5rem;
     margin: 1rem 0;
     background-color: var(--primary);
-    color: var(--white);
+    color: #ffffff;
 
     &:hover {
       cursor: pointer;

@@ -7,6 +7,17 @@ import Document, {
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
+type ThemeChangeType = () => void
+type PreferredTheme = (theme: string) => void
+
+declare global {
+  interface Window {
+    __theme: string
+    __onThemeChange: ThemeChangeType
+    __setPreferredTheme: PreferredTheme
+  }
+}
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet()
@@ -42,6 +53,36 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                window.__onThemeChange = function() {};
+
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                      localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+                
+                setTheme(preferredTheme || 'light');
+              })();
+            `
+          }}
+        />
       </Html>
     )
   }
