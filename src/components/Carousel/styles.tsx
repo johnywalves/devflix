@@ -2,13 +2,12 @@ import styled from 'styled-components'
 
 export const Title = styled.h3`
   font-style: normal;
-  font-weight: normal;
-  font-size: 35px;
+  font-weight: 700;
+  font-size: 4.5rem;
   line-height: 1;
   margin-left: 5%;
   display: inline-block;
   padding: 20px;
-  background: red;
   line-height: 1;
   border-radius: 4px;
 
@@ -22,6 +21,8 @@ export const ExtraLink = styled.a`
   margin-left: 16px;
   text-decoration: none;
   transition: opacity 0.3s;
+  font-size: 2rem;
+
   &:hover,
   &:focus {
     opacity: 0.5;
@@ -37,11 +38,5 @@ export const ExtraLink = styled.a`
 export const CarrouselContainer = styled.section`
   color: white;
   min-height: 197px;
-  overflow-x: hidden;
-  overflow-y: visible;
-
-  .slick-list {
-    margin-left: 5%;
-    overflow: visible;
-  }
+  overflow: hidden;
 `

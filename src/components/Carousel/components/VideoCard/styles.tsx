@@ -1,17 +1,21 @@
 import styled from 'styled-components'
 
+type VideoCardContainerProps = {
+  url: string
+}
+
 export const VideoCardContainer = styled.a`
   text-decoration: none;
   overflow: visible;
   cursor: pointer;
   color: white;
-  flex: 0 0 298px;
-  width: 298px;
-  height: 197px;
-  background-image: ${({ url }) => `url(${url})`};
-  background-size: cover;
+  flex: 0 0 480px;
+  width: 480px;
+  height: 204px;
+  background-image: ${({ url }: VideoCardContainerProps) => `url(${url})`};
   background-position: center;
-  border-radius: 10px;
+  background-repeat: no-repeat;
+  border-radius: 5px;
   position: relative;
   display: flex;
   align-items: center;

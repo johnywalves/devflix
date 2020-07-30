@@ -5,6 +5,13 @@ import styled from 'styled-components'
 const Container = styled.ul`
   padding: 0;
   margin: 0;
+
+  .slick-list {
+    padding-left: 5%;
+    overflow: visible;
+    background-color: #00000022;
+  }
+
   .slick-prev,
   .slick-next {
     z-index: 50;
@@ -14,22 +21,61 @@ const Container = styled.ul`
     width: 5%;
     height: 5%;
     transform: initial;
+    opacity: 1;
+    background-color: #00000022;
+    transition: all 0.3s;
 
     &:hover {
+      opacity: 1;
       background-color: #00000088;
     }
-    &:before {
-      font-size: 30px;
+
+    &.slick-disabled {
+      opacity: 0.25;
+      background-color: transparent;
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      content: '';
+      background-color: #fff;
+      display: block;
+      height: 3rem;
+      width: 0.5rem;
+      opacity: 1;
+      border-radius: 0.25rem;
+    }
+
+    &.slick-disabled:before,
+    &.slick-disabled:after {
+      opacity: 1;
     }
   }
 
   .slick-prev {
     left: 0px;
     height: 100%;
+
+    &:before {
+      transform: translate(-50%, -80%) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-50%, -20%) rotate(-45deg);
+    }
   }
   .slick-next {
     right: 0px;
     height: 100%;
+
+    &:before {
+      transform: translate(-50%, -80%) rotate(-45deg);
+    }
+    &:after {
+      transform: translate(-50%, -20%) rotate(45deg);
+    }
   }
 `
 
