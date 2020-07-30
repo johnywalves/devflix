@@ -5,7 +5,7 @@ export const Title = styled.h3`
   font-weight: normal;
   font-size: 35px;
   line-height: 1;
-  margin-bottom: 16px;
+  margin-left: 5%;
   display: inline-block;
   padding: 20px;
   background: red;
@@ -26,6 +26,7 @@ export const ExtraLink = styled.a`
   &:focus {
     opacity: 0.5;
   }
+
   @media (max-width: 800px) {
     display: block;
     margin-bottom: 16px;
@@ -36,6 +37,11 @@ export const ExtraLink = styled.a`
 export const CarrouselContainer = styled.section`
   color: white;
   min-height: 197px;
-  margin-left: 5%;
-  margin-bottom: 16px;
+  overflow-x: hidden;
+  overflow-y: visible;
+
+  .slick-list {
+    margin-left: 5%;
+    overflow: visible;
+  }
 `

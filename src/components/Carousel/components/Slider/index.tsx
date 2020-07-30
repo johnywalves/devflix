@@ -11,24 +11,29 @@ const Container = styled.ul`
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 30px;
-    height: 30px;
+    width: 5%;
+    height: 5%;
     transform: initial;
+
+    &:hover {
+      background-color: #00000088;
+    }
     &:before {
       font-size: 30px;
     }
   }
 
   .slick-prev {
-    left: 0;
+    left: 0px;
+    height: 100%;
   }
   .slick-next {
-    right: 16px;
+    right: 0px;
+    height: 100%;
   }
 `
 
 export const SliderItem = styled.li`
-  margin-right: 16px;
   img {
     margin: 16px;
     width: 298px;

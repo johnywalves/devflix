@@ -8,7 +8,7 @@ const getYouTubeId = (youtubeURL) => {
   )
 }
 
-const VideoCard = ({ videoTitle, videoURL, categoryColor }) => {
+const VideoCard = ({ videoTitle, videoURL }) => {
   const image = `https://img.youtube.com/vi/${getYouTubeId(
     videoURL
   )}/hqdefault.jpg`
@@ -17,7 +17,6 @@ const VideoCard = ({ videoTitle, videoURL, categoryColor }) => {
       url={image}
       href={videoURL}
       target="_blank"
-      style={{ borderColor: categoryColor || 'red' }}
       title={videoTitle}
     />
   )
