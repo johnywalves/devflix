@@ -6,3 +6,9 @@ export const Main = styled.main`
   flex: 1;
   padding: 5rem 5% 0;
 `
+
+export const MainHome = styled.main`
+  background-color: var(--black);
+  color: var(--white);
+  flex: 1;
+`
