@@ -16,8 +16,7 @@ export const Nav = styled.nav`
   padding-left: 5%;
   padding-right: 5%;
 
-  background: var(--black);
-  border-bottom: 2px solid var(--primary);
+  background: var(--background);
 
   @media (max-width: 800px) {
     height: 40px;

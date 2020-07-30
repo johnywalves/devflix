@@ -5,14 +5,14 @@ type VideoCardContainerProps = {
 }
 
 export const VideoCardContainer = styled.a`
-  text-decoration: none;
   overflow: visible;
   cursor: pointer;
   color: white;
-  flex: 0 0 480px;
-  width: 480px;
-  height: 204px;
+  flex: 0 0 384px;
+  width: 384px;
+  height: 163px;
   background-image: ${({ url }: VideoCardContainerProps) => `url(${url})`};
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 5px;

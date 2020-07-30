@@ -9,16 +9,17 @@ const GlobalStyles = createGlobalStyle`
     }
 
     :root {
-        --primary: #DC143C;
-        --black: #000000;
+        --primary: #ec1d8c;
+        --black: #030303;
         --blackLighter: #9E9E9E;
         --grayLight: #F5F5F5;
         --grayMedium: #e5e5e5; 
         --white: #FFFFFF;
         --frontEnd: #6BD1FF;
         --backEnd: #00C86F;
-        --background: #141414;
-        --backgroundInput: #141414;
+        --background: #f3f3f3;
+        --backgroundInput: #d3d3d3;
+        --colorSkin: #ffb8b8;
     }
 
     html {
@@ -35,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
 
     a {
         color: inherit;
+        text-decoration: none;
     } 
 
     #__next {

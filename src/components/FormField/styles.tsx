@@ -14,7 +14,7 @@ export const Label = styled.label`
     appearance: none;
     background-color: var(--backgroundInput);
     font-size: 3rem;
-    color: var(--white);
+    color: var(--black);
     border: none;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
@@ -22,6 +22,7 @@ export const Label = styled.label`
 
   input[type='text'],
   textarea {
+    padding: 1rem;
     border-bottom: 2px var(--white) solid;
   }
 

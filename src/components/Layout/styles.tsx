@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const Main = styled.main`
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--background);
+  color: var(--black);
   flex: 1;
-  padding: 5rem 5% 0;
+  padding: 2rem 5% 0;
 
   h1 {
     font-size: 5rem;
@@ -28,7 +28,7 @@ export const Main = styled.main`
 `
 
 export const MainHome = styled.main`
-  background-color: var(--black);
+  background-color: var(--background);
   color: var(--white);
   flex: 1;
 `

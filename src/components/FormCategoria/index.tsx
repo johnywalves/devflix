@@ -46,7 +46,7 @@ export const Color = styled.div`
   height: 1.8rem;
   width: 1.8rem;
   border-radius: 50%;
-  border: 1px var(--white) solid;
+  border: 1px var(--black) solid;
   background-color: ${({ cor }: ColorProps) => cor};
   margin: auto 1.5rem auto 0;
 `

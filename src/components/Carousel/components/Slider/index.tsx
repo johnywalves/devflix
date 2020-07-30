@@ -9,7 +9,6 @@ const Container = styled.ul`
   .slick-list {
     padding-left: 5%;
     overflow: visible;
-    background-color: #00000022;
   }
 
   .slick-prev,
@@ -21,18 +20,16 @@ const Container = styled.ul`
     width: 5%;
     height: 5%;
     transform: initial;
-    opacity: 1;
-    background-color: #00000022;
+    opacity: 0.75;
     transition: all 0.3s;
 
     &:hover {
       opacity: 1;
-      background-color: #00000088;
+      transform: scale(1.25);
     }
 
     &.slick-disabled {
-      opacity: 0.25;
-      background-color: transparent;
+      opacity: 0.2;
     }
 
     &:before,
@@ -41,7 +38,7 @@ const Container = styled.ul`
       left: 50%;
       top: 50%;
       content: '';
-      background-color: #fff;
+      background-color: var(--white);
       display: block;
       height: 3rem;
       width: 0.5rem;

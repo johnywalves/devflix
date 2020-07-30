@@ -4,10 +4,9 @@ export const Title = styled.h3`
   font-style: normal;
   font-weight: 700;
   font-size: 4.5rem;
-  line-height: 1;
   margin-left: 5%;
   display: inline-block;
-  padding: 20px;
+  padding: 20px 20px 20px 0;
   line-height: 1;
   border-radius: 4px;
 
@@ -19,7 +18,6 @@ export const Title = styled.h3`
 
 export const ExtraLink = styled.a`
   margin-left: 16px;
-  text-decoration: none;
   transition: opacity 0.3s;
   font-size: 2rem;
 
@@ -36,7 +34,7 @@ export const ExtraLink = styled.a`
 `
 
 export const CarrouselContainer = styled.section`
-  color: white;
-  min-height: 197px;
+  color: var(--white);
+  min-height: 163px;
   overflow: hidden;
 `
