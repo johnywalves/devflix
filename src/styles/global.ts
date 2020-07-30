@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
         --frontEnd: #6BD1FF;
         --backEnd: #00C86F;
         --background: #141414;
+        --backgroundInput: #141414;
     }
 
     html {

@@ -6,15 +6,13 @@ import Footer from 'components/Footer'
 import { Main } from './styles'
 
 type LayoutProps = {
-  banner?: ReactNode
   children: ReactNode
 }
 
-const Layout = ({ banner, children }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Menu />
-      {banner}
       <Main>{children}</Main>
       <Footer />
     </>

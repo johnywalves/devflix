@@ -18,6 +18,6 @@ export const FooterBase = styled.footer`
 
 export const Logo = styled.img`
   width: auto;
-  height: 5rem;
-  margin-bottom: 0.25rem;
+  height: 3rem;
+  margin-bottom: 0.75rem;
 `
