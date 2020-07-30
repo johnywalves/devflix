@@ -48,6 +48,10 @@ export const Astro = styled.div`
     box-shadow: inset -4px 0px 0px #ff8603, inset 2px 0px 0px #ffffffcc,
       inset -5px 0px 0px 2px #ffd201, 0px 0px 0px 8px #ffd20133;
   }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
 
 export const Logo = styled.img`

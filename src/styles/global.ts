@@ -8,8 +8,6 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
-
-
     html {
         font-size: 62.5%;
     }
@@ -24,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         --primary: #ec1d8c;
-        --black: #030303;
+        --black: #3a3a3a;
         --blackLighter: #9E9E9E;
         --grayLight: #F5F5F5;
         --grayMedium: #e5e5e5; 
@@ -34,6 +32,7 @@ const GlobalStyles = createGlobalStyle`
         --background: #f3f3f3;
         --backgroundInput: #d3d3d3;
         --colorSkin: #ffb8b8;
+        --colorClother: #2f2e41;
     }
 
     body.dark {
@@ -48,6 +47,7 @@ const GlobalStyles = createGlobalStyle`
         --background: #202020;
         --backgroundInput: #3d3d3d;
         --colorSkin: #ffb8b8;
+        --colorClother: #cfcede;
     }
 
     a {
