@@ -26,7 +26,7 @@ const GlobalStyles = createGlobalStyle`
         --black: #3a3a3a;
         --blackLighter: #9E9E9E;
         --grayLight: #F5F5F5;
-        --grayMedium: #e5e5e5; 
+        --grayMedium: #666666; 
         --white: #FFFFFF;
         --frontEnd: #6BD1FF;
         --backEnd: #00C86F;

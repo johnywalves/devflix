@@ -31,4 +31,12 @@ export const MainHome = styled.main`
   background-color: var(--background);
   color: var(--white);
   flex: 1;
+
+  section:nth-child(2n) {
+    background-color: var(--grayMedium);
+  }
+
+  section:nth-child(2n + 1) {
+    background-color: var(--black);
+  }
 `

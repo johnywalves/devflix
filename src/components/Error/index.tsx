@@ -9,7 +9,11 @@ export const Container = styled.div`
 
 export const Illustration = styled.svg`
   margin: 0 auto;
-  height: max(50vh, 10rem);
+  height: min(50vh, 50rem);
+
+  @media (max-width: 800px) {
+    height: 30vh;
+  }
 `
 
 export const Description = styled.p`
@@ -17,4 +21,8 @@ export const Description = styled.p`
   text-align: center;
   margin-bottom: 4rem;
   padding: 0 20%;
+
+  @media (max-width: 800px) {
+    font-size: 2rem;
+  }
 `

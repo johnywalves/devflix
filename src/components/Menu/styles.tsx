@@ -55,13 +55,13 @@ export const Astro = styled.div`
 `
 
 export const Logo = styled.img`
-  max-width: 168px;
+  height: 3.8rem;
 
   &:hover {
     cursor: pointer;
   }
 
   @media (max-width: 800px) {
-    max-width: 105px;
+    height: 4rem;
   }
 `

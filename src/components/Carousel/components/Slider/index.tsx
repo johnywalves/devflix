@@ -20,16 +20,19 @@ const Container = styled.ul`
     width: 5%;
     height: 5%;
     transform: initial;
-    opacity: 0.75;
+    opacity: 1;
     transition: all 0.3s;
 
-    &:hover {
-      opacity: 1;
-      transform: scale(1.25);
+    &:not(.slick-disabled):hover {
+      transform: scale(1.5);
+    }
+
+    &.slick-disabled:hover {
+      cursor: default;
     }
 
     &.slick-disabled {
-      opacity: 0.2;
+      opacity: 0.15;
     }
 
     &:before,
@@ -41,7 +44,7 @@ const Container = styled.ul`
       background-color: #ffffff;
       display: block;
       height: 3rem;
-      width: 0.5rem;
+      width: 1rem;
       opacity: 1;
       border-radius: 0.25rem;
     }
@@ -57,10 +60,10 @@ const Container = styled.ul`
     height: 100%;
 
     &:before {
-      transform: translate(-50%, -80%) rotate(45deg);
+      transform: translate(-50%, -75%) rotate(45deg);
     }
     &:after {
-      transform: translate(-50%, -20%) rotate(-45deg);
+      transform: translate(-50%, -25%) rotate(-45deg);
     }
   }
   .slick-next {
@@ -68,10 +71,10 @@ const Container = styled.ul`
     height: 100%;
 
     &:before {
-      transform: translate(-50%, -80%) rotate(-45deg);
+      transform: translate(-50%, -75%) rotate(-45deg);
     }
     &:after {
-      transform: translate(-50%, -20%) rotate(45deg);
+      transform: translate(-50%, -25%) rotate(45deg);
     }
   }
 `

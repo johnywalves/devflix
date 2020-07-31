@@ -1,11 +1,12 @@
 import React from 'react'
 
-import { Container, Explain, Title, Description, Draw } from './styles'
+import { Container, Explain, Title, Description, Draw, Logo } from './styles'
 
 const BannerFronthead = () => {
   return (
     <Container>
       <Explain>
+        <Logo src="/img/logo.png" />
         <Title>
           Plataforma para compartilhando de informação para área da{' '}
           <span>desenvolvimento</span> de software em língua brasileira

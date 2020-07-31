@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 
 import Layout from 'components/Layout'
 import FormField from 'components/FormField'
+import Loading from 'components/Loading'
 import {
   Formulario,
   BoxForm,
   Listagem,
-  Color,
-  LoadingBox,
-  Loading
+  ListagemItem,
+  Color
 } from 'components/FormCategoria'
 
 type categoriaProps = {
@@ -90,20 +90,16 @@ const CadastroCategoria = () => {
           </div>
         </Formulario>
 
-        <Listagem>
-          {loading ? (
-            <LoadingBox>
-              <Loading />
-            </LoadingBox>
-          ) : (
-            categorias.map((categoria, indice) => (
-              <li key={indice}>
+        <Loading loading={loading}>
+          <Listagem>
+            {categorias.map((categoria, indice) => (
+              <ListagemItem key={indice}>
                 <Color cor={categoria.cor} />
                 <span>{categoria.titulo}</span> {categoria.descricao}
-              </li>
-            ))
-          )}
-        </Listagem>
+              </ListagemItem>
+            ))}
+          </Listagem>
+        </Loading>
       </BoxForm>
     </Layout>
   )

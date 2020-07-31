@@ -6,6 +6,7 @@ export const Container = styled.section`
   flex-direction: row;
   justify-content: space-between;
   padding: 1rem 5%;
+  background-color: var(--background) !important;
 
   @media (max-width: 1200px) {
     position: relative;
@@ -29,6 +30,11 @@ export const Explain = styled.div`
   @media (max-width: 1200px) {
     width: 80%;
   }
+`
+
+export const Logo = styled.img`
+  width: 23rem;
+  margin-bottom: 2rem;
 `
 
 export const Title = styled.h1`

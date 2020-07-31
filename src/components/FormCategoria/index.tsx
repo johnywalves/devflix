@@ -20,12 +20,6 @@ export const Listagem = styled.ul`
   list-style-type: none;
   font-size: 1.75rem;
 
-  li {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-  }
-
   span {
     font-size: 2.5rem;
     font-weight: 700;
@@ -35,6 +29,12 @@ export const Listagem = styled.ul`
   @media (max-width: 800px) {
     margin-left: 0;
   }
+`
+
+export const ListagemItem = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 `
 
 type ColorProps = {
@@ -49,21 +49,4 @@ export const Color = styled.div`
   border: 1px var(--black) solid;
   background-color: ${({ cor }: ColorProps) => cor};
   margin: auto 1.5rem auto 0;
-`
-
-export const LoadingBox = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
-export const Loading = styled.div`
-  border: 2rem solid var(--backgroundInput);
-  border-left-color: var(--primary);
-  height: 15rem;
-  width: 15rem;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
 `

@@ -1,14 +1,29 @@
 import styled from 'styled-components'
 
+type TitleProps = {
+  categoryColor: string
+}
+
 export const Title = styled.h3`
+  position: relative;
   font-style: normal;
   font-weight: 700;
   font-size: 4.5rem;
-  margin-left: 5%;
+  margin: 1rem 0 0 5%;
   display: inline-block;
-  padding: 20px 20px 20px 0;
+  padding: 20px 20px 20px 3rem;
   line-height: 1;
   border-radius: 4px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 1rem;
+    height: calc(100% - 40px);
+    background-color: ${({ categoryColor }: TitleProps) => categoryColor};
+  }
 
   @media (max-width: 800px) {
     font-size: 18px;
@@ -17,7 +32,6 @@ export const Title = styled.h3`
 `
 
 export const ExtraLink = styled.a`
-  margin-left: 16px;
   transition: opacity 0.3s;
   font-size: 2rem;
 
