@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "develop": "next dev",
     "build": "next build",
     "export": "next export",
     "deploy": "next build && next export",
@@ -14,7 +14,7 @@
     "test": "jest",
     "test:watch": "yarn test --watch",
     "server": "node ./server.js",
-    "start:server": "concurrently \"yarn dev\" \"yarn server\""
+    "dev": "concurrently \"yarn develop\" \"yarn server\""
   },
   "husky": {
     "hooks": {

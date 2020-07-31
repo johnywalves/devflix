@@ -20,7 +20,7 @@ type categoriaProps = {
 const valoresIniciais: categoriaProps = {
   titulo: '',
   descricao: '',
-  cor: ''
+  cor: '#000000'
 }
 
 const CadastroCategoria = () => {
@@ -47,7 +47,7 @@ const CadastroCategoria = () => {
 
   useEffect(() => {
     const url = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8008/categorias'
+      ? 'http://localhost:8080/categorias'
       : 'https://devflixjohnywalves.herokuapp.com/categorias'
 
     setLoading(true)

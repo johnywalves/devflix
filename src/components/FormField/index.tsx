@@ -18,9 +18,15 @@ const FormField = ({ label, type, name, value, onChange }: FormFieldProps) => {
   return (
     <FormFieldWrapper>
       <Label>
-        <Input as={tag} value={value} name={name} onChange={onChange} />
+        <Input
+          as={tag}
+          value={value}
+          type={type}
+          name={name}
+          onChange={onChange}
+        />
+        <LabelText>{label}</LabelText>
       </Label>
-      <LabelText>{label}</LabelText>
     </FormFieldWrapper>
   )
 }

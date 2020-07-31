@@ -33,10 +33,11 @@ export const LabelText = styled.span`
 `
 
 type InputProps = {
+  type: string
   value?: string
 }
 
-export const Input = styled.input`
+export const Input = styled.input<InputProps>`
   background: var(--backgroundInput);
   color: var(--black);
   display: block;
@@ -55,11 +56,15 @@ export const Input = styled.input`
   border-radius: 4px;
   transition: border-color 0.3s;
 
+  &[type='color'] {
+    padding: 0 16px;
+  }
+
   &:focus {
     border-bottom-color: var(--primary);
   }
 
-  &:focus:not([type='color']) + ${Label.Text} {
+  &:focus:not([type='color']) + ${LabelText} {
     transform: scale(0.6) translateY(-10px);
   }
 
@@ -68,7 +73,7 @@ export const Input = styled.input`
     return (
       hasValue &&
       css`
-        &:not([type='color']) + ${Label.Text} {
+        &:not([type='color']) + ${LabelText} {
           transform: scale(0.6) translateY(-10px);
         }
       `
