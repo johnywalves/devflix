@@ -35,6 +35,5 @@ export const ExtraLink = styled.a`
 
 export const CarrouselContainer = styled.section`
   color: var(--white);
-  min-height: 163px;
   overflow: hidden;
 `

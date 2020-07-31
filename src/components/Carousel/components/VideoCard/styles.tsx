@@ -20,7 +20,7 @@ export const VideoCardContainer = styled.a`
   display: flex;
   align-items: center;
   padding: 0;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   margin: 32px 4px;
   z-index: 1;
 
