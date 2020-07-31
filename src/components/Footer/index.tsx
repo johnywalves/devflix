@@ -1,10 +1,14 @@
 import React from 'react'
+import Link from 'next/link'
+
 import { FooterBase, Logo } from './styles'
 
 const Footer = () => {
   return (
     <FooterBase>
-      <Logo src="/img/logo.png" alt="Logo do Devflix" />
+      <Link href="/">
+        <Logo src="/img/logo.png" alt="Logo do Devflix" />
+      </Link>
       <p>
         Orgulhosamente criado por{' '}
         <a

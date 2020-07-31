@@ -7,7 +7,9 @@ const CadastroVideo = () => {
     <Layout>
       <h1>Cadastro Vídeo</h1>
       <Link href="/cadastro/categoria">
-        <h5>Cadastrar Categoria</h5>
+        <h5 style={{ fontSize: '5rem', color: 'var(--primary)' }}>
+          Cadastrar Categoria
+        </h5>
       </Link>
     </Layout>
   )

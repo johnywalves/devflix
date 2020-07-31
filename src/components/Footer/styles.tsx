@@ -23,4 +23,8 @@ export const Logo = styled.img`
   width: auto;
   height: 3rem;
   margin-bottom: 0.75rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 `
