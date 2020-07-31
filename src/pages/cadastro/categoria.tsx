@@ -2,7 +2,14 @@ import React, { useEffect, useState } from 'react'
 
 import Layout from 'components/Layout'
 import FormField from 'components/FormField'
-import { Formulario, BoxForm, Listagem, Color } from 'components/FormCategoria'
+import {
+  Formulario,
+  BoxForm,
+  Listagem,
+  Color,
+  LoadingBox,
+  Loading
+} from 'components/FormCategoria'
 
 type categoriaProps = {
   titulo?: string
@@ -17,6 +24,7 @@ const valoresIniciais: categoriaProps = {
 }
 
 const CadastroCategoria = () => {
+  const [loading, setLoading] = useState<boolean>(true)
   const [categorias, setCategorias] = useState<Array<categoriaProps>>([])
   const [values, setValues] = useState<categoriaProps>(valoresIniciais)
 
@@ -38,10 +46,17 @@ const CadastroCategoria = () => {
   }
 
   useEffect(() => {
-    const url = 'http://localhost:8008/categorias'
+    const url = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8008/categorias'
+      : 'https://devflixjohnywalves.herokuapp.com/categorias'
+
+    setLoading(true)
     fetch(url)
       .then((resp) => resp.json())
-      .then((resp) => setCategorias([...resp]))
+      .then((resp) => {
+        setCategorias([...resp])
+        setLoading(false)
+      })
   }, [])
 
   return (
@@ -76,12 +91,18 @@ const CadastroCategoria = () => {
         </Formulario>
 
         <Listagem>
-          {categorias.map((categoria, indice) => (
-            <li key={indice}>
-              <Color cor={categoria.cor} />
-              <span>{categoria.titulo}</span> {categoria.descricao}
-            </li>
-          ))}
+          {loading ? (
+            <LoadingBox>
+              <Loading />
+            </LoadingBox>
+          ) : (
+            categorias.map((categoria, indice) => (
+              <li key={indice}>
+                <Color cor={categoria.cor} />
+                <span>{categoria.titulo}</span> {categoria.descricao}
+              </li>
+            ))
+          )}
         </Listagem>
       </BoxForm>
     </Layout>

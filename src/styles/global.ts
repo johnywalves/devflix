@@ -68,6 +68,10 @@ const GlobalStyles = createGlobalStyle`
             padding-top: var(--bodyPaddingTop);
         }
     }
+
+    @keyframes spin {
+        to { transform: rotate(360deg) }
+    }
 `
 
 export default GlobalStyles
