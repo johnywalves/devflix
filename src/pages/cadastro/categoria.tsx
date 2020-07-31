@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Layout from 'components/Layout'
 import FormField from 'components/FormField'
 import { Formulario, BoxForm, Listagem, Color } from 'components/FormCategoria'
 
 type categoriaProps = {
-  nome?: string
+  titulo?: string
   descricao?: string
   cor: string
 }
 
 const valoresIniciais: categoriaProps = {
-  nome: '',
+  titulo: '',
   descricao: '',
   cor: ''
 }
@@ -37,6 +37,13 @@ const CadastroCategoria = () => {
     setValues(valoresIniciais)
   }
 
+  useEffect(() => {
+    const url = 'http://localhost:8008/categorias'
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((resp) => setCategorias([...resp]))
+  }, [])
+
   return (
     <Layout>
       <h1>Cadastro de Categoria</h1>
@@ -45,8 +52,8 @@ const CadastroCategoria = () => {
           <FormField
             label="Nome da Categoria"
             type="text"
-            name="nome"
-            value={values.nome}
+            name="titulo"
+            value={values.titulo}
             onChange={handleChange}
           />
           <FormField
@@ -72,7 +79,7 @@ const CadastroCategoria = () => {
           {categorias.map((categoria, indice) => (
             <li key={indice}>
               <Color cor={categoria.cor} />
-              <span>{categoria.nome}</span> {categoria.descricao}
+              <span>{categoria.titulo}</span> {categoria.descricao}
             </li>
           ))}
         </Listagem>

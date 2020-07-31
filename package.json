@@ -7,13 +7,13 @@
     "build": "next build",
     "export": "next export",
     "deploy": "next build && next export",
-    "start": "next start",
+    "start": "node ./server.js",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook",
     "lint": "eslint src --max-warnings=0",
     "test": "jest",
     "test:watch": "yarn test --watch",
-    "server": "json-server --watch db.json --port 8008",
+    "server": "node ./server.js",
     "start:server": "concurrently \"yarn dev\" \"yarn server\""
   },
   "husky": {

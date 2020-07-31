@@ -33,7 +33,7 @@ export const LabelText = styled.span`
 `
 
 type InputProps = {
-  value: string
+  value?: string
 }
 
 export const Input = styled.input`
@@ -64,7 +64,7 @@ export const Input = styled.input`
   }
 
   ${({ value }: InputProps) => {
-    const hasValue = value.length > 0
+    const hasValue = value && value.length > 0
     return (
       hasValue &&
       css`
