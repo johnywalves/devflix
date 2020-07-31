@@ -39,7 +39,7 @@ const CadastroCategoria = () => {
 
   return (
     <Layout>
-      <h1>Cadastro Categoria</h1>
+      <h1>Cadastro de Categoria</h1>
       <BoxForm>
         <Formulario onSubmit={handleSubmit}>
           <FormField
@@ -50,17 +50,17 @@ const CadastroCategoria = () => {
             onChange={handleChange}
           />
           <FormField
-            label="Cor"
-            type="color"
-            name="cor"
-            value={values.cor}
-            onChange={handleChange}
-          />
-          <FormField
             label="Descrição"
             type="textarea"
             name="descricao"
             value={values.descricao}
+            onChange={handleChange}
+          />
+          <FormField
+            label="Cor"
+            type="color"
+            name="cor"
+            value={values.cor}
             onChange={handleChange}
           />
           <div>

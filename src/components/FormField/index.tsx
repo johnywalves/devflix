@@ -1,27 +1,27 @@
 import React from 'react'
 
-import { Label } from './styles'
+import { FormFieldWrapper, Label, LabelText, Input } from './styles'
 
 type FormFieldProps = {
   label: string
   type: string
   name: string
-  value?: string
+  value: string
   onChange: (
     event: React.ChangeEvent<HTMLInputElement & HTMLTextAreaElement>
   ) => void
 }
 
 const FormField = ({ label, type, name, value, onChange }: FormFieldProps) => {
+  const isTextArea = type === 'textarea'
+  const tag = isTextArea ? 'textarea' : 'input'
   return (
-    <Label>
-      <p>{label}</p>
-      {type === 'textarea' ? (
-        <textarea value={value} name={name} rows={4} onChange={onChange} />
-      ) : (
-        <input type={type} value={value} name={name} onChange={onChange} />
-      )}
-    </Label>
+    <FormFieldWrapper>
+      <Label>
+        <Input as={tag} value={value} name={name} onChange={onChange} />
+      </Label>
+      <LabelText>{label}</LabelText>
+    </FormFieldWrapper>
   )
 }
 
