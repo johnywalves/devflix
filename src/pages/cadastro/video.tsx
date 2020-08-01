@@ -4,7 +4,13 @@ import { NextRouter, withRouter } from 'next/router'
 import Layout from 'components/Layout'
 import FormField from 'components/FormField'
 import Loading from 'components/Loading'
-import { Formulario, BoxForm } from 'components/Formulario'
+import VideoCard from 'components/VideoCard'
+import {
+  Formulario,
+  BoxForm,
+  Listagem,
+  ContainerCenter
+} from 'components/Formulario'
 
 import categoriasRepository from 'repositories/categorias'
 import videosRepository from 'repositories/videos'
@@ -37,17 +43,17 @@ const CadastroVideo = ({ router }: CadastroVideoProps) => {
       return categoria.titulo === values.categoria
     })
 
-    videosRepository
-      .create({
-        titulo: values.titulo,
-        url: values.url,
-        categoriaId: categoriaEscolhida ? categoriaEscolhida.id : 1
-      })
-      .then(() => {
-        router.push(
-          `/?newvideo=${categoriaEscolhida ? categoriaEscolhida.id : 1}`
-        )
-      })
+    if (categoriaEscolhida) {
+      videosRepository
+        .create({
+          titulo: values.titulo,
+          url: values.url,
+          categoriaId: categoriaEscolhida.id
+        })
+        .then(() => {
+          router.push(`/?newvideo=${categoriaEscolhida.id}`)
+        })
+    }
   }
 
   useEffect(() => {
@@ -70,17 +76,17 @@ const CadastroVideo = ({ router }: CadastroVideoProps) => {
         <BoxForm>
           <Formulario onSubmit={handleSubmit}>
             <FormField
-              label="Titulo do Vídeo"
-              type="text"
-              name="titulo"
-              value={values.titulo}
-              onChange={handleChange}
-            />
-            <FormField
               label="Url"
               type="text"
               name="url"
               value={values.url}
+              onChange={handleChange}
+            />
+            <FormField
+              label="Titulo do Vídeo"
+              type="text"
+              name="titulo"
+              value={values.titulo}
               onChange={handleChange}
             />
             <FormField
@@ -95,6 +101,18 @@ const CadastroVideo = ({ router }: CadastroVideoProps) => {
               <button>Cadastrar</button>
             </div>
           </Formulario>
+
+          <Listagem>
+            <ContainerCenter>
+              {values.url && (
+                <VideoCard
+                  preview={true}
+                  videoTitle={values.titulo || ''}
+                  videoURL={values.url}
+                />
+              )}
+            </ContainerCenter>
+          </Listagem>
         </BoxForm>
       </Loading>
     </Layout>

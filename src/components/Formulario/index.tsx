@@ -68,12 +68,18 @@ export const ListagemItem = styled.li`
   margin-bottom: 0.5rem;
 `
 
+export const ContainerCenter = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`
+
 type ColorProps = {
   cor: string
 }
 
 export const Color = styled.div`
-  display: block;
+  display: table;
   height: 2rem;
   width: 2rem;
   border-radius: 50%;

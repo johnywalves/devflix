@@ -19,10 +19,10 @@ export const Main = styled.main`
   }
 
   section:nth-child(2n) {
-    background-color: var(--grayMedium);
+    background-color: var(--backgroundInput);
   }
 
   section:nth-child(2n + 1) {
-    background-color: var(--black);
+    background-color: var(--background);
   }
 `

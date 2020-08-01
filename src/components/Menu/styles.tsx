@@ -49,8 +49,14 @@ export const Astro = styled.div`
   }
 `
 
+type LogoProsp = {
+  viewForehead: boolean
+}
+
 export const Logo = styled.img`
   height: 3.8rem;
+  transition: opacity 0.3s;
+  opacity: ${({ viewForehead }: LogoProsp) => (viewForehead ? '0' : '1')};
 
   &:hover {
     cursor: pointer;

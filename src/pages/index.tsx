@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 import { CategoriaProps } from 'interfaces'
 
@@ -10,15 +11,17 @@ import Layout from 'components/Layout'
 import categoriasRepository from 'repositories/categorias'
 
 const Home = () => {
+  const router = useRouter()
+
   const [loading, setLoading] = useState<boolean>(true)
-  const [dadosIniciais, setDadosIniciais] = useState<Array<CategoriaProps>>([])
+  const [categorias, setCategorias] = useState<Array<CategoriaProps>>([])
 
   useEffect(() => {
     setLoading(true)
     categoriasRepository
       .getAllWithVideos()
       .then((categoriasComVideos) => {
-        setDadosIniciais(categoriasComVideos)
+        setCategorias(categoriasComVideos)
         setLoading(false)
       })
       .catch(() => {
@@ -26,11 +29,29 @@ const Home = () => {
       })
   }, [])
 
+  useEffect(() => {
+    if (!loading && router.query.newvideo) {
+      setTimeout(() => {
+        const element = document.getElementById(
+          `categoria_${router.query.newvideo}`
+        )
+        const navigation = document.querySelector('nav')
+
+        if (element && navigation) {
+          window.scrollTo({
+            top: element.offsetTop - navigation.clientHeight,
+            behavior: 'smooth'
+          })
+        }
+      }, 500)
+    }
+  }, [loading, router.query.newvideo])
+
   return (
     <Layout suppressPadding={true}>
       <BannerFronthead />
       <Loading loading={loading}>
-        {dadosIniciais.map((categoria: CategoriaProps, index: number) => (
+        {categorias.map((categoria: CategoriaProps, index: number) => (
           <Carousel key={index} ignoreFirstVideo category={categoria} />
         ))}
       </Loading>

@@ -11,7 +11,8 @@ type MenuProps = {
 }
 
 const Menu = ({ router }: MenuProps) => {
-  const [theme, setTheme] = useState('')
+  const [theme, setTheme] = useState<string>('')
+  const [viewForehead, setViewForehead] = useState<boolean>(true)
 
   const isDarkMode = theme === 'dark'
 
@@ -20,13 +21,44 @@ const Menu = ({ router }: MenuProps) => {
     window.__onThemeChange = () => setTheme(window.__theme)
   }, [])
 
+  useEffect(() => {
+    if (router.route === '/') {
+      const handleScroll = () => {
+        const element = document.getElementById('logo_forehead')
+        if (element) {
+          const bounding = element.getBoundingClientRect()
+
+          const isViewpoort =
+            bounding.top >= 0 &&
+            bounding.left >= 0 &&
+            bounding.right <=
+              (window.innerWidth || document.documentElement.clientWidth) &&
+            bounding.bottom <=
+              (window.innerHeight || document.documentElement.clientHeight)
+
+          setViewForehead(isViewpoort)
+        }
+      }
+
+      handleScroll()
+      window.addEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll)
+    } else {
+      setViewForehead(false)
+    }
+  }, [router.route])
+
   const handleTheme = () =>
     window.__setPreferredTheme(isDarkMode ? 'light' : 'dark')
 
   return (
     <Nav>
       <Link href="/">
-        <Logo className="Logo" src={'/img/logo.png'} />
+        <Logo
+          className="Logo"
+          src={'/img/logo.png'}
+          viewForehead={viewForehead}
+        />
       </Link>
       {/*<Search type="text" placeholder="Pesquisa" />*/}
       <Commands>

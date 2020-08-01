@@ -6,7 +6,7 @@ const BannerFronthead = () => {
   return (
     <Container>
       <Explain>
-        <Logo src="/img/logo.png" />
+        <Logo id="logo_forehead" src="/img/logo.png" />
         <Title>
           Plataforma para compartilhando de informação para área da{' '}
           <span>desenvolvimento</span> de software em língua brasileira

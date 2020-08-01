@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 type VideoCardContainerProps = {
   url: string
+  preview?: boolean
 }
 
 export const VideoCardContainer = styled.a`
@@ -24,13 +25,20 @@ export const VideoCardContainer = styled.a`
   margin: 32px 4px;
   z-index: 1;
 
-  &:hover,
-  &:focus {
-    transform: scale(1.35);
-    z-index: 5;
-  }
-
   &:not(:first-child) {
     margin-left: 20px;
   }
+
+  ${({ preview }: VideoCardContainerProps) => {
+    return (
+      !preview &&
+      css`
+        &:hover,
+        &:focus {
+          transform: scale(1.35);
+          z-index: 5;
+        }
+      `
+    )
+  }}
 `

@@ -1,10 +1,11 @@
 import React from 'react'
 
+import VideoCard from 'components/VideoCard'
+
 import { CategoriaProps, VideoProps } from 'interfaces'
 
-import VideoCard from './components/VideoCard'
 import Slider, { SliderItem } from './components/Slider'
-import { CarrouselContainer, Title, ExtraLink } from './styles'
+import { CarrouselContainer, Header, Title, ExtraLink } from './styles'
 
 type CarrouselProps = {
   ignoreFirstVideo: boolean
@@ -16,18 +17,18 @@ function Carrousel({ ignoreFirstVideo, category }: CarrouselProps) {
   const categoryTitle = category.titulo
   const categoryColor = category.cor
   const categoryExtraLink = category.link_extra
-  const videos = category.videos
+  const videos = (category.videos || []).map((v) => v).reverse()
   return (
     <CarrouselContainer id={categoriaId}>
       {categoryTitle && (
-        <>
+        <Header>
           <Title categoryColor={categoryColor}>{categoryTitle}</Title>
           {categoryExtraLink && (
             <ExtraLink href={categoryExtraLink.url} target="_blank">
               {categoryExtraLink.text}
             </ExtraLink>
           )}
-        </>
+        </Header>
       )}
       <Slider>
         {videos &&

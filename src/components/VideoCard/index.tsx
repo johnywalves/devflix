@@ -11,9 +11,10 @@ const getYouTubeId = (youtubeURL: string) => {
 type VideoCardProps = {
   videoTitle: string
   videoURL: string
+  preview?: boolean
 }
 
-const VideoCard = ({ videoTitle, videoURL }: VideoCardProps) => {
+const VideoCard = ({ videoTitle, videoURL, preview }: VideoCardProps) => {
   const image = `https://img.youtube.com/vi/${getYouTubeId(
     videoURL
   )}/hqdefault.jpg`
@@ -22,6 +23,7 @@ const VideoCard = ({ videoTitle, videoURL }: VideoCardProps) => {
       url={image}
       href={videoURL}
       target="_blank"
+      preview={preview}
       title={videoTitle}
     />
   )

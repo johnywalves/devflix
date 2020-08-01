@@ -4,12 +4,17 @@ type TitleProps = {
   categoryColor: string
 }
 
+export const Header = styled.header`
+  padding-left: 5%;
+`
+
 export const Title = styled.h3`
+  color: var(--black);
   position: relative;
   font-style: normal;
   font-weight: 700;
   font-size: 4.5rem;
-  margin: 1rem 0 0 5%;
+  margin: 1rem 0 0 0;
   display: inline-block;
   padding: 20px 20px 20px 3rem;
   line-height: 1;
@@ -35,6 +40,7 @@ export const Title = styled.h3`
 `
 
 export const ExtraLink = styled.a`
+  color: var(--black);
   transition: opacity 0.3s;
   font-size: 2rem;
 
@@ -46,7 +52,7 @@ export const ExtraLink = styled.a`
   @media (max-width: 800px) {
     display: block;
     margin-bottom: 16px;
-    margin-left: calc(5% + 3rem);
+    margin-left: 3rem;
   }
 `
 
