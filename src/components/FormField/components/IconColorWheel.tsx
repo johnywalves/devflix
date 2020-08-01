@@ -1,11 +1,15 @@
-const IconColorWheel = (props: HTMLOrSVGElement) => (
+type IconColorWheelProps = {
+  className?: string
+}
+
+const IconColorWheel = ({ className }: IconColorWheelProps) => (
   <svg
     enableBackground="new 0 0 500.238 500.238"
     height="512"
     viewBox="0 0 500.238 500.238"
     width="512"
     xmlns="http://www.w3.org/2000/svg"
-    {...props}
+    className={className}
   >
     <path
       d="m462.702 179.884-25.827-23.063-52.623 20.224-7.16 29.548-27.519 124.838 89.36 38.929 11.089-14.317c15.3-31.38 23.88-66.64 23.88-103.91 0-25.189-3.94-49.459-11.2-72.249z"
