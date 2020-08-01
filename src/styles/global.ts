@@ -31,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
         --frontEnd: #6BD1FF;
         --backEnd: #00C86F;
         --background: #f3f3f3;
-        --backgroundInput: #d3d3d3;
+        --backgroundInput: #e6e6e6;
         --colorSkin: #ffb8b8;
         --colorClother: #2f2e41;
     }

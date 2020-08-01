@@ -26,8 +26,11 @@ export const Title = styled.h3`
   }
 
   @media (max-width: 800px) {
-    font-size: 18px;
-    padding: 10px;
+    font-size: 2rem;
+
+    &:before {
+      height: 100%;
+    }
   }
 `
 
@@ -43,7 +46,7 @@ export const ExtraLink = styled.a`
   @media (max-width: 800px) {
     display: block;
     margin-bottom: 16px;
-    margin-left: 0;
+    margin-left: calc(5% + 3rem);
   }
 `
 

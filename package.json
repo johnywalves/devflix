@@ -14,7 +14,7 @@
     "test": "jest",
     "test:watch": "yarn test --watch",
     "server": "node ./server.js",
-    "dev": "concurrently \"yarn develop\" \"yarn server\""
+    "dev": "NODE_ENV=development concurrently \"yarn develop\" \"yarn server\""
   },
   "husky": {
     "hooks": {

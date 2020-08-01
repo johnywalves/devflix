@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import IconColorWheel from './components/IconColorWheel'
+
 export const FormFieldWrapper = styled.div`
   position: relative;
 
@@ -8,7 +10,12 @@ export const FormFieldWrapper = styled.div`
   }
 
   input[type='color'] {
-    padding-left: 56px;
+    padding-left: 15rem;
+    padding-right: 5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `
 
@@ -30,11 +37,19 @@ export const LabelText = styled.span`
   font-weight: 300;
 
   transition: 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
 `
 
 type InputProps = {
   type: string
   value?: string
+  hasValue: boolean
+  autoComplete: string
+  list?: string
 }
 
 export const Input = styled.input<InputProps>`
@@ -50,7 +65,7 @@ export const Input = styled.input<InputProps>`
   border-bottom: 4px solid var(--black);
 
   padding: 16px 16px;
-  margin-bottom: 45px;
+  margin-bottom: 2rem;
 
   resize: none;
   border-radius: 4px;
@@ -58,6 +73,8 @@ export const Input = styled.input<InputProps>`
 
   &[type='color'] {
     padding: 0 16px;
+    background: transparent;
+    border: none;
   }
 
   &:focus {
@@ -65,6 +82,7 @@ export const Input = styled.input<InputProps>`
   }
 
   &:focus:not([type='color']) + ${LabelText} {
+    color: var(--primary);
     transform: scale(0.6) translateY(-10px);
   }
 
@@ -79,4 +97,17 @@ export const Input = styled.input<InputProps>`
       `
     )
   }}
+`
+
+export const ColorWheel = styled(IconColorWheel)`
+  position: absolute;
+  top: 0.85rem;
+  right: 0;
+  height: 4rem;
+  width: 4rem;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.75;
+  }
 `

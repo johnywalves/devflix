@@ -1,27 +1,40 @@
-import { CategoryProps } from 'interfaces'
+import { useState, useEffect } from 'react'
 
+import { CategoriaProps } from 'interfaces'
+
+import Loading from 'components/Loading'
 import BannerFronthead from 'components/BannerFronthead'
 import Carousel from 'components/Carousel'
-import Menu from 'components/Menu'
-import Footer from 'components/Footer'
-import { MainHome } from 'components/Layout/styles'
+import Layout from 'components/Layout'
 
-import dadosInciais from 'data/dados_iniciais.json'
+import categoriasRepository from 'repositories/categorias'
 
 const Home = () => {
+  const [loading, setLoading] = useState<boolean>(true)
+  const [dadosIniciais, setDadosIniciais] = useState<Array<CategoriaProps>>([])
+
+  useEffect(() => {
+    setLoading(true)
+    categoriasRepository
+      .getAllWithVideos()
+      .then((categoriasComVideos) => {
+        setDadosIniciais(categoriasComVideos)
+        setLoading(false)
+      })
+      .catch(() => {
+        setLoading(false)
+      })
+  }, [])
+
   return (
-    <>
-      <Menu />
-      <MainHome>
-        <BannerFronthead />
-        {dadosInciais.categorias.map(
-          (categoria: CategoryProps, index: number) => (
-            <Carousel key={index} ignoreFirstVideo category={categoria} />
-          )
-        )}
-      </MainHome>
-      <Footer />
-    </>
+    <Layout suppressPadding={true}>
+      <BannerFronthead />
+      <Loading loading={loading}>
+        {dadosIniciais.map((categoria: CategoriaProps, index: number) => (
+          <Carousel key={index} ignoreFirstVideo category={categoria} />
+        ))}
+      </Loading>
+    </Layout>
   )
 }
 

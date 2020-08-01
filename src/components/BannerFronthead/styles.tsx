@@ -17,6 +17,7 @@ export const Container = styled.section`
 export const Explain = styled.div`
   width: 50%;
   padding-top: 5rem;
+  z-index: 2;
 
   span {
     color: var(--primary);

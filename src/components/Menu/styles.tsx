@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Nav = styled.nav`
   width: 100%;
@@ -19,8 +19,7 @@ export const Nav = styled.nav`
   background: var(--background);
 
   @media (max-width: 800px) {
-    height: 40px;
-    justify-content: center;
+    height: 6rem;
   }
 `
 
@@ -48,10 +47,6 @@ export const Astro = styled.div`
     box-shadow: inset -4px 0px 0px #ff8603, inset 2px 0px 0px #ffffffcc,
       inset -5px 0px 0px 2px #ffd201, 0px 0px 0px 8px #ffd20133;
   }
-
-  @media (max-width: 800px) {
-    display: none;
-  }
 `
 
 export const Logo = styled.img`
@@ -63,5 +58,33 @@ export const Logo = styled.img`
 
   @media (max-width: 800px) {
     height: 4rem;
+    margin: 1rem 0;
   }
+`
+
+export const Search = styled.input`
+  color: var(--black);
+  background-color: transparent;
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid var(--black);
+  opacity: 0.5;
+  padding-right: 4rem;
+
+  &:focus {
+    border-bottom-color: var(--primary);
+    opacity: 1;
+  }
+
+  ${({ value }: HTMLInputElement) => {
+    const hasValue = value && value.length > 0
+    return (
+      hasValue &&
+      css`
+        border-bottom-color: var(--primary);
+        opacity: 1;
+      `
+    )
+  }}
 `

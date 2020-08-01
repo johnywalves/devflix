@@ -9,15 +9,13 @@ import {
   Listagem,
   ListagemItem,
   Color
-} from 'components/FormCategoria'
+} from 'components/Formulario'
 
-type categoriaProps = {
-  titulo?: string
-  descricao?: string
-  cor: string
-}
+import categoriasRepository from 'repositories/categorias'
+import useFormCategoria from 'hooks/useFormCategoria'
+import { CategoriaProps } from 'interfaces'
 
-const valoresIniciais: categoriaProps = {
+const valoresIniciais: CategoriaProps = {
   titulo: '',
   descricao: '',
   cor: '#000000'
@@ -25,36 +23,25 @@ const valoresIniciais: categoriaProps = {
 
 const CadastroCategoria = () => {
   const [loading, setLoading] = useState<boolean>(true)
-  const [categorias, setCategorias] = useState<Array<categoriaProps>>([])
-  const [values, setValues] = useState<categoriaProps>(valoresIniciais)
+  const [categorias, setCategorias] = useState<Array<CategoriaProps>>([])
 
-  const setValue = (chave: string, valor: string) => {
-    setValues({
-      ...values,
-      [chave]: valor
-    })
-  }
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.getAttribute('name') || '', event.target.value)
-  }
+  const [values, handleChange, clearForm] = useFormCategoria(valoresIniciais)
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setCategorias([...categorias, values])
-    setValues(valoresIniciais)
+    clearForm()
   }
 
   useEffect(() => {
-    const url = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categorias'
-      : 'https://devflixjohnywalves.herokuapp.com/categorias'
-
     setLoading(true)
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((resp) => {
-        setCategorias([...resp])
+    categoriasRepository
+      .getAll()
+      .then((categoriasFromServer) => {
+        setCategorias(categoriasFromServer)
+        setLoading(false)
+      })
+      .catch(() => {
         setLoading(false)
       })
   }, [])
@@ -65,7 +52,7 @@ const CadastroCategoria = () => {
       <BoxForm>
         <Formulario onSubmit={handleSubmit}>
           <FormField
-            label="Nome da Categoria"
+            label="Titulo da Categoria"
             type="text"
             name="titulo"
             value={values.titulo}
@@ -79,7 +66,7 @@ const CadastroCategoria = () => {
             onChange={handleChange}
           />
           <FormField
-            label="Cor"
+            label="Selecione a cor"
             type="color"
             name="cor"
             value={values.cor}

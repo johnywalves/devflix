@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 export const LoadingBox = styled.section`
-  height: 100%;
-  width: 100%;
+  margin-bottom: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--background) !important;
 `
 
 export const LoadingSpin = styled.div`

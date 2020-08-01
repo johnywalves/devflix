@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,9 +11,11 @@ export const Container = styled.div`
 export const Illustration = styled.svg`
   margin: 0 auto;
   height: min(50vh, 50rem);
+  width: auto;
 
   @media (max-width: 800px) {
     height: 30vh;
+    width: auto;
   }
 `
 

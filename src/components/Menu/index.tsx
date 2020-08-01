@@ -28,10 +28,16 @@ const Menu = ({ router }: MenuProps) => {
       <Link href="/">
         <Logo className="Logo" src={'/img/logo.png'} />
       </Link>
+      {/*<Search type="text" placeholder="Pesquisa" />*/}
       <Commands>
-        {router.route === '/' && (
+        {router.route !== '/cadastro/video' && (
           <Link href="/cadastro/video">
             <Button as="a">Novo Vídeo</Button>
+          </Link>
+        )}
+        {router.route === '/cadastro/video' && (
+          <Link href="/cadastro/categoria">
+            <Button as="a">Nova Categoria</Button>
           </Link>
         )}
         <Astro onClick={handleTheme} />

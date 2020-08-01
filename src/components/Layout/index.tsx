@@ -7,13 +7,14 @@ import { Main } from './styles'
 
 type LayoutProps = {
   children: ReactNode
+  suppressPadding?: boolean
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, suppressPadding }: LayoutProps) => {
   return (
     <>
       <Menu />
-      <Main>{children}</Main>
+      <Main suppressPadding={suppressPadding}>{children}</Main>
       <Footer />
     </>
   )
