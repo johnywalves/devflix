@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Nav = styled.nav`
   width: 100%;
@@ -66,31 +66,4 @@ export const Logo = styled.img`
     height: 4rem;
     margin: 1rem 0;
   }
-`
-
-export const Search = styled.input`
-  color: var(--black);
-  background-color: transparent;
-  font-size: 1.8rem;
-  padding: 0.5rem;
-  border: none;
-  border-bottom: 2px solid var(--black);
-  opacity: 0.5;
-  padding-right: 4rem;
-
-  &:focus {
-    border-bottom-color: var(--primary);
-    opacity: 1;
-  }
-
-  ${({ value }: HTMLInputElement) => {
-    const hasValue = value && value.length > 0
-    return (
-      hasValue &&
-      css`
-        border-bottom-color: var(--primary);
-        opacity: 1;
-      `
-    )
-  }}
 `

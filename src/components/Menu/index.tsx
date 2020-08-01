@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import Button from 'components/Button'
 
+//import Search from './components/Search'
 import { Nav, Logo, Commands, Astro } from './styles'
 
 type MenuProps = {
@@ -60,7 +61,7 @@ const Menu = ({ router }: MenuProps) => {
           viewForehead={viewForehead}
         />
       </Link>
-      {/*<Search type="text" placeholder="Pesquisa" />*/}
+      {/*<Search />*/}
       <Commands>
         {router.route !== '/cadastro/video' && (
           <Link href="/cadastro/video">

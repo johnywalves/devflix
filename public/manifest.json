@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#06092B",
-  "description": "Plataforma para compartilhando de informação para área da desenvolvimento de software em língua brasileira",
+  "description": "Plataforma para compartilhamento de conhecimento sobre desenvolvimento de software em língua brasileira",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#06092B"

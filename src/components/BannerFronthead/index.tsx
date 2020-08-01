@@ -8,11 +8,11 @@ const BannerFronthead = () => {
       <Explain>
         <Logo id="logo_forehead" src="/img/logo.png" />
         <Title>
-          Plataforma para compartilhando de informação para área da{' '}
+          Plataforma para compartilhamento de conhecimento sobre{' '}
           <span>desenvolvimento</span> de software em língua brasileira
         </Title>
         <Description>
-          Desenvolvidor por{' '}
+          Desenvolvido por{' '}
           <a href="https://johnywalves.com.br" target="_blank" rel="noreferrer">
             Johny W. Alves
           </a>{' '}

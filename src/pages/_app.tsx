@@ -17,7 +17,7 @@ function App({ Component, pageProps }: AppProps) {
         />
         <meta
           name="description"
-          content="Plataforma para compartilhando de informação para área da desenvolvimento de software em língua brasileira"
+          content="Plataforma para compartilhamento de conhecimento sobre desenvolvimento de software em língua brasileira"
         />
         <link
           rel="stylesheet"
