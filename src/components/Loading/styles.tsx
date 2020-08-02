@@ -1,4 +1,8 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+type LoadingBoxProps = {
+  center?: boolean
+}
 
 export const LoadingBox = styled.section`
   margin-bottom: 5rem;
@@ -6,6 +10,12 @@ export const LoadingBox = styled.section`
   align-items: center;
   justify-content: center;
   background-color: var(--background) !important;
+
+  ${({ center }: LoadingBoxProps) =>
+    center &&
+    css`
+      height: calc(100% - var(--bodyPaddingTop));
+    `}
 `
 
 export const LoadingSpin = styled.div`

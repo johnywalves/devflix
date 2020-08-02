@@ -4,14 +4,15 @@ import Link from 'next/link'
 
 import Button from 'components/Button'
 
-//import Search from './components/Search'
+import Search from '../Search'
 import { Nav, Logo, Commands, Astro } from './styles'
 
 type MenuProps = {
   router: NextRouter
+  result: boolean
 }
 
-const Menu = ({ router }: MenuProps) => {
+const Menu = ({ router, result }: MenuProps) => {
   const [theme, setTheme] = useState<string>('')
   const [viewForehead, setViewForehead] = useState<boolean>(true)
 
@@ -28,7 +29,6 @@ const Menu = ({ router }: MenuProps) => {
         const element = document.getElementById('logo_forehead')
         if (element) {
           const bounding = element.getBoundingClientRect()
-
           const isViewpoort =
             bounding.top >= 0 &&
             bounding.left >= 0 &&
@@ -58,11 +58,11 @@ const Menu = ({ router }: MenuProps) => {
         <Logo
           className="Logo"
           src={'/img/logo.png'}
-          viewForehead={viewForehead}
+          viewForehead={result ? false : viewForehead}
         />
       </Link>
-      {/*<Search />*/}
       <Commands>
+        <Search />
         {router.route !== '/cadastro/video' && (
           <Link href="/cadastro/video">
             <Button as="a">Novo Vídeo</Button>

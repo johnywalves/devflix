@@ -34,6 +34,7 @@ const GlobalStyles = createGlobalStyle`
         --backgroundInput: #e6e6e6;
         --colorSkin: #ffb8b8;
         --colorClother: #2f2e41;
+        --shadowColor: #0000003f;
     }
 
     body.dark {
@@ -49,6 +50,7 @@ const GlobalStyles = createGlobalStyle`
         --backgroundInput: #3d3d3d;
         --colorSkin: #ffb8b8;
         --colorClother: #cfcede;
+        --shadowColor: #ffffff3f;
     }
 
     a {
@@ -65,7 +67,7 @@ const GlobalStyles = createGlobalStyle`
 
     @media (max-width: 800px) {
         #__next {
-            --bodyPaddingTop: 40px;
+            --bodyPaddingTop: 6rem;
             padding-top: var(--bodyPaddingTop);
         }
     }

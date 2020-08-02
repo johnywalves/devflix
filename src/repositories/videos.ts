@@ -21,6 +21,20 @@ const create = (objetoDoVideo: VideoProps) => {
   })
 }
 
+const getSearchVideos = (query: string) => {
+  return fetch(`${URL_VIDEOS}?_expand=categoria&q=${query}`).then(
+    async (respostaDoServidor) => {
+      if (respostaDoServidor.ok) {
+        const resposta = await respostaDoServidor.json()
+        return resposta
+      }
+
+      throw new Error('Não foi possível pegar os dados :(')
+    }
+  )
+}
+
 export default {
+  getSearchVideos,
   create
 }

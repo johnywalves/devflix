@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 
 type VideoCardContainerProps = {
+  index?: number
   url: string
   preview?: boolean
 }
@@ -17,6 +18,7 @@ export const VideoCardContainer = styled.a`
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 5px;
+  box-shadow: 1px 1px 4px var(--shadowColor);
   position: relative;
   display: flex;
   align-items: center;
@@ -25,20 +27,22 @@ export const VideoCardContainer = styled.a`
   margin: 32px 4px;
   z-index: 1;
 
-  &:not(:first-child) {
-    margin-left: 20px;
+  &:hover,
+  &:focus {
+    transform: scale(1.3);
+    box-shadow: 0 4px 16px var(--shadowColor);
+    z-index: 5;
   }
 
   ${({ preview }: VideoCardContainerProps) => {
-    return (
-      !preview &&
-      css`
-        &:hover,
-        &:focus {
-          transform: scale(1.35);
-          z-index: 5;
-        }
-      `
-    )
+    return preview
+      ? css`
+          margin: 24px 4px;
+        `
+      : css`
+          &:not(:first-child) {
+            margin-left: 20px;
+          }
+        `
   }}
 `

@@ -9,12 +9,16 @@ import { ServerStyleSheet } from 'styled-components'
 
 type ThemeChangeType = () => void
 type PreferredTheme = (theme: string) => void
+type SetSearchText = (search: string) => void
+type ClearSearchText = () => void
 
 declare global {
   interface Window {
     __theme: string
     __onThemeChange: ThemeChangeType
     __setPreferredTheme: PreferredTheme
+    __setSearchText: SetSearchText
+    __clearSearchText: ClearSearchText
   }
 }
 

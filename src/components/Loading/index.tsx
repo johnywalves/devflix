@@ -9,7 +9,7 @@ type LoadingProps = {
 const Loading = ({ loading, children }: LoadingProps) => (
   <>
     {loading ? (
-      <LoadingBox>
+      <LoadingBox center={true}>
         <LoadingSpin />
       </LoadingBox>
     ) : (
