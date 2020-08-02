@@ -27,15 +27,18 @@ type CadastroVideoProps = {
   router: NextRouter
 }
 
+type SuggestionProps = {
+  categoria: Array<string>
+}
+
 const CadastroVideo = ({ router }: CadastroVideoProps) => {
   const [loadingCategorias, setLoadingCategorias] = useState<boolean>(true)
   const [categorias, setCategorias] = useState<Array<CategoriaProps>>([])
+  const [suggestions, setSuggestions] = useState<SuggestionProps>({
+    categoria: []
+  })
 
-  const categoryTitles: Array<string> = categorias.map(
-    ({ titulo }) => titulo || ''
-  )
-
-  const formVideo = useFormVideo(valoresIniciais)
+  const formVideo = useFormVideo(valoresIniciais, suggestions)
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -63,6 +66,11 @@ const CadastroVideo = ({ router }: CadastroVideoProps) => {
       .getAll()
       .then((categoriasFromServer) => {
         setCategorias(categoriasFromServer)
+        setSuggestions({
+          categoria: categoriasFromServer.map(
+            ({ titulo }: CategoriaProps) => titulo || ''
+          )
+        })
         setLoadingCategorias(false)
       })
       .catch(() => {
@@ -102,7 +110,7 @@ const CadastroVideo = ({ router }: CadastroVideoProps) => {
               error={formVideo.errors.categoria}
               onBlur={formVideo.handleBlur}
               onChange={formVideo.handleChange}
-              suggestions={categoryTitles}
+              suggestions={suggestions.categoria}
             />
             <div>
               <ButtonForm disabled={!formVideo.submittable}>

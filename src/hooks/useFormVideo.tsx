@@ -1,10 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react'
 
 import { VideoProps } from 'interfaces'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const validade = (values: VideoProps, touched: any): any => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const validade = (values: VideoProps, touched: any, options: any): any => {
   const errors: any = {}
 
   if (touched.url) {
@@ -22,6 +21,8 @@ const validade = (values: VideoProps, touched: any): any => {
   if (touched.categoria) {
     if (!values.categoria || values.categoria.length === 0) {
       errors.categoria = 'Por favor informe a Categoria do Vídeo'
+    } else if (!options.categoria.includes(values.categoria)) {
+      errors.categoria = 'Por favor selecione uma das categorias na lista'
     }
   }
 
@@ -30,7 +31,6 @@ const validade = (values: VideoProps, touched: any): any => {
 
 type useFormProps = {
   values: VideoProps
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   errors: any
   submittable: boolean
   handleBlur: (event: React.FocusEvent<HTMLInputElement>) => void
@@ -38,7 +38,7 @@ type useFormProps = {
   clearForm: () => void
 }
 
-const useForm = (valoresIniciais: VideoProps): useFormProps => {
+const useForm = (valoresIniciais: VideoProps, options: any): useFormProps => {
   const [values, setValues] = useState<VideoProps>(valoresIniciais)
   const [submittable, setSubmittable] = useState(false)
   const [errors, setErros] = useState({})
@@ -60,8 +60,8 @@ const useForm = (valoresIniciais: VideoProps): useFormProps => {
   }
 
   useEffect(() => {
-    setErros(validade(values, touched))
-  }, [values, touched])
+    setErros(validade(values, touched, options))
+  }, [values, touched, options])
 
   useEffect(() => {
     setSubmittable(

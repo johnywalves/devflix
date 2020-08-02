@@ -1,23 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react'
 
 import { CategoriaProps } from 'interfaces'
 
-const index = (
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  obj: any,
-  is: Array<string> | string,
-  value: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-): any => {
+const index = (obj: any, is: Array<string> | string, value: string): any => {
   if (typeof is == 'string') return index(obj, is.split('.'), value)
   else if (is.length == 1 && value !== undefined) return (obj[is[0]] = value)
   else if (is.length == 0) return obj
   else return index(obj[is[0]], is.slice(1), value)
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const validade = (values: CategoriaProps, touched: any): any => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const errors: any = {}
 
   if (touched.titulo) {
@@ -40,7 +33,6 @@ const validade = (values: CategoriaProps, touched: any): any => {
 
 type FormProps = {
   values: CategoriaProps
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   errors: any
   submittable: boolean
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
