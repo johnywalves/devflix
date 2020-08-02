@@ -20,6 +20,19 @@ const create = (objetoDaCategoria: CategoriaProps) => {
   })
 }
 
+const remove = (id: number) => {
+  return fetch(`${URL_CATEGORIES}/${id}`, {
+    method: 'DELETE'
+  }).then(async (respostaDoServidor) => {
+    if (respostaDoServidor.ok) {
+      const resposta = await respostaDoServidor.json()
+      return resposta
+    }
+
+    throw new Error('Não foi possível remover os dados :(')
+  })
+}
+
 const getAll = () => {
   return fetch(`${URL_CATEGORIES}`).then(async (respostaDoServidor) => {
     if (respostaDoServidor.ok) {
@@ -46,6 +59,7 @@ const getAllWithVideos = () => {
 
 export default {
   create,
+  remove,
   getAllWithVideos,
   getAll
 }

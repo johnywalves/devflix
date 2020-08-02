@@ -63,10 +63,27 @@ export const Listagem = styled.ul`
 export const ListagemItem = styled.li`
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  min-height: 2.5rem;
+  margin-bottom: 0.5rem;
+`
+
+export const ListagemLinha = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-end;
   min-height: 2.5rem;
-  margin-bottom: 0.5rem;
+`
+
+export const ListagemComandos = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 3.5rem;
+  min-height: 2.5rem;
+  margin: 0.5rem 0;
 `
 
 export const ContainerCenter = styled.div`
@@ -86,4 +103,16 @@ export const Color = styled.div`
   border-radius: 50%;
   background-color: ${({ cor }: ColorProps) => cor};
   margin: auto 1.5rem auto 0;
+`
+
+export const ButtonRemove = styled.div`
+  color: var(--black);
+  height: 1.5rem;
+  width: 1.5rem;
+  opacity: 0.75;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
 `

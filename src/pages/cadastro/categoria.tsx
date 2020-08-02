@@ -8,9 +8,13 @@ import {
   BoxForm,
   Listagem,
   ListagemItem,
-  Color
+  ListagemLinha,
+  ListagemComandos,
+  Color,
+  ButtonRemove
 } from 'components/Formulario'
 
+import IconTrash from 'icons/IconTrash'
 import categoriasRepository from 'repositories/categorias'
 import useFormCategoria from 'hooks/useFormCategoria'
 import { CategoriaProps } from 'interfaces'
@@ -44,6 +48,23 @@ const CadastroCategoria = () => {
         setSaving(false)
         setCategorias([...categorias, values])
         clearForm()
+      })
+      .catch(() => {
+        setSaving(false)
+      })
+  }
+
+  const removeCategoria = (categoriaId: number) => {
+    categoriasRepository
+      .remove(categoriaId)
+      .then(() => {
+        setCategorias(
+          categorias
+            .filter((categoria) => categoria.id !== categoriaId)
+            .map((c) => c)
+        )
+        clearForm()
+        setSaving(false)
       })
       .catch(() => {
         setSaving(false)
@@ -107,9 +128,18 @@ const CadastroCategoria = () => {
           <Listagem>
             {categorias.map((categoria, indice) => (
               <ListagemItem key={indice}>
-                <Color cor={categoria.cor} />
-                <span>{categoria.titulo}</span>{' '}
-                {categoria.link_extra ? categoria.link_extra.text : ''}
+                <ListagemLinha>
+                  <Color cor={categoria.cor} />
+                  <span>{categoria.titulo}</span>{' '}
+                  {categoria.link_extra ? categoria.link_extra.text : ''}
+                </ListagemLinha>
+                <ListagemComandos>
+                  <ButtonRemove
+                    onClick={() => removeCategoria(categoria.id || 0)}
+                  >
+                    <IconTrash />
+                  </ButtonRemove>
+                </ListagemComandos>
               </ListagemItem>
             ))}
           </Listagem>
