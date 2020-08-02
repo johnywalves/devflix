@@ -9,7 +9,7 @@ const validade = (values: VideoProps, touched: any): any => {
 
   if (touched.url) {
     if (!values.url || values.url.length === 0) {
-      errors.url = 'Por favor informe o Url do vídeo'
+      errors.url = 'Por favor informe o Url do Vídeo'
     }
   }
 
@@ -32,6 +32,7 @@ type useFormProps = {
   values: VideoProps
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   errors: any
+  submittable: boolean
   handleBlur: (event: React.FocusEvent<HTMLInputElement>) => void
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   clearForm: () => void
@@ -39,6 +40,7 @@ type useFormProps = {
 
 const useForm = (valoresIniciais: VideoProps): useFormProps => {
   const [values, setValues] = useState<VideoProps>(valoresIniciais)
+  const [submittable, setSubmittable] = useState(false)
   const [errors, setErros] = useState({})
   const [touched, setTouched] = useState({})
 
@@ -61,15 +63,24 @@ const useForm = (valoresIniciais: VideoProps): useFormProps => {
     setErros(validade(values, touched))
   }, [values, touched])
 
+  useEffect(() => {
+    setSubmittable(
+      Object.keys(errors).length === 0 && Object.keys(touched).length > 0
+    )
+  }, [errors, touched])
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.getAttribute('name') || '', event.target.value)
   }
 
   function clearForm() {
+    setSubmittable(false)
     setValues(valoresIniciais)
+    setErros({})
+    setTouched({})
   }
 
-  return { values, errors, handleChange, handleBlur, clearForm }
+  return { values, errors, submittable, handleChange, handleBlur, clearForm }
 }
 
 export default useForm

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const BoxForm = styled.div`
   display: grid;
@@ -19,28 +19,36 @@ export const Formulario = styled.form`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+`
 
-  button {
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 2.5rem;
-    font-weight: 500;
-    padding: 1.25rem 2rem;
-    margin: 1rem 0;
-    background-color: var(--primary);
-    color: #ffffff;
-    transition: opacity 0.3s;
+type ButtonFormProps = {
+  disabled: boolean
+}
 
-    &:hover {
-      cursor: pointer;
+export const ButtonForm = styled.button`
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  padding: 1.25rem 2rem;
+  margin: 1rem 0;
+  background-color: var(--primary);
+  color: #ffffff;
+  transition: opacity 0.3s;
+
+  ${({ disabled }: ButtonFormProps) =>
+    disabled &&
+    css`
       opacity: 0.5;
-    }
+    `}
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
   }
 
   @media (max-width: 800px) {
-    button {
-      margin-bottom: 3rem;
-    }
+    margin-bottom: 3rem;
   }
 `
 
@@ -81,6 +89,7 @@ export const ListagemComandos = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
   padding-left: 3.5rem;
   min-height: 2.5rem;
   margin: 0.5rem 0;

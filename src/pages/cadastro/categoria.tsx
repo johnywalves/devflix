@@ -5,6 +5,7 @@ import FormField from 'components/FormField'
 import Loading from 'components/Loading'
 import {
   Formulario,
+  ButtonForm,
   BoxForm,
   Listagem,
   ListagemItem,
@@ -35,7 +36,6 @@ const CadastroCategoria = () => {
   const [categorias, setCategorias] = useState<Array<CategoriaProps>>([])
 
   const formCategoria = useFormCategoria(valoresIniciais)
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setSaving(false)
@@ -44,9 +44,9 @@ const CadastroCategoria = () => {
       .create({
         ...formCategoria.values
       })
-      .then(() => {
+      .then((categoria) => {
         setSaving(false)
-        setCategorias([...categorias, formCategoria.values])
+        setCategorias([...categorias, categoria])
         formCategoria.clearForm()
       })
       .catch(() => {
@@ -126,7 +126,9 @@ const CadastroCategoria = () => {
               onChange={formCategoria.handleChange}
             />
             <div>
-              <button>Cadastrar</button>
+              <ButtonForm disabled={!formCategoria.submittable}>
+                Cadastrar
+              </ButtonForm>
             </div>
           </Formulario>
         </Loading>

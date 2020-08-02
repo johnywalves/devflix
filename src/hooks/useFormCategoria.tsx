@@ -42,6 +42,7 @@ type FormProps = {
   values: CategoriaProps
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   errors: any
+  submittable: boolean
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   handleBlur: (event: React.FocusEvent<HTMLInputElement>) => void
   clearForm: () => void
@@ -52,6 +53,7 @@ const useFormCategoria = (valoresIniciais: CategoriaProps): FormProps => {
     ...valoresIniciais,
     link_extra: { ...valoresIniciais.link_extra }
   })
+  const [submittable, setSubmittable] = useState(false)
   const [errors, setErros] = useState({})
   const [touched, setTouched] = useState({})
 
@@ -75,19 +77,27 @@ const useFormCategoria = (valoresIniciais: CategoriaProps): FormProps => {
     setErros(validade(values, touched))
   }, [values, touched])
 
+  useEffect(() => {
+    setSubmittable(
+      Object.keys(errors).length === 0 && Object.keys(touched).length > 0
+    )
+  }, [errors, touched])
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.getAttribute('name') || '', event.target.value)
   }
 
   function clearForm() {
+    setSubmittable(false)
     setValues({
       ...valoresIniciais,
       link_extra: { ...valoresIniciais.link_extra }
     })
     setErros({})
+    setTouched({})
   }
 
-  return { values, errors, handleChange, handleBlur, clearForm }
+  return { values, errors, submittable, handleChange, handleBlur, clearForm }
 }
 
 export default useFormCategoria

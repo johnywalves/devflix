@@ -24,7 +24,7 @@ export const Label = styled.label``
 
 export const ErrorMessage = styled.p`
   color: var(--errorColor);
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
 `
 

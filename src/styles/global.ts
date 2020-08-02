@@ -52,7 +52,7 @@ const GlobalStyles = createGlobalStyle`
         --colorSkin: #ffb8b8;
         --colorClother: #cfcede;
         --shadowColor: #ffffff3f;
-        --errorColor: #de4545;
+        --errorColor: #e66565;
     }
 
     a {

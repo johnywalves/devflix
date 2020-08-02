@@ -7,6 +7,7 @@ import Loading from 'components/Loading'
 import VideoCard from 'components/VideoCard'
 import {
   Formulario,
+  ButtonForm,
   BoxForm,
   Listagem,
   ContainerCenter
@@ -104,7 +105,9 @@ const CadastroVideo = ({ router }: CadastroVideoProps) => {
               suggestions={categoryTitles}
             />
             <div>
-              <button>Cadastrar</button>
+              <ButtonForm disabled={!formVideo.submittable}>
+                Cadastrar
+              </ButtonForm>
             </div>
           </Formulario>
 
