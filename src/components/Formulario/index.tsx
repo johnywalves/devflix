@@ -62,6 +62,7 @@ export const Listagem = styled.ul`
 
 export const ListagemItem = styled.li`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-end;
   min-height: 2.5rem;

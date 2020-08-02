@@ -16,21 +16,38 @@ import useFormCategoria from 'hooks/useFormCategoria'
 import { CategoriaProps } from 'interfaces'
 
 const valoresIniciais: CategoriaProps = {
+  id: 0,
   titulo: '',
-  descricao: '',
-  cor: '#000000'
+  cor: '#000000',
+  link_extra: {
+    text: '',
+    url: ''
+  }
 }
 
 const CadastroCategoria = () => {
   const [loading, setLoading] = useState<boolean>(true)
+  const [saving, setSaving] = useState<boolean>(false)
   const [categorias, setCategorias] = useState<Array<CategoriaProps>>([])
 
   const [values, handleChange, clearForm] = useFormCategoria(valoresIniciais)
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setCategorias([...categorias, values])
-    clearForm()
+    setSaving(false)
+
+    categoriasRepository
+      .create({
+        ...values
+      })
+      .then(() => {
+        setSaving(false)
+        setCategorias([...categorias, values])
+        clearForm()
+      })
+      .catch(() => {
+        setSaving(false)
+      })
   }
 
   useEffect(() => {
@@ -50,39 +67,51 @@ const CadastroCategoria = () => {
     <Layout>
       <h1>Cadastro de Categoria</h1>
       <BoxForm>
-        <Formulario onSubmit={handleSubmit}>
-          <FormField
-            label="Titulo da Categoria"
-            type="text"
-            name="titulo"
-            value={values.titulo}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Descrição"
-            type="textarea"
-            name="descricao"
-            value={values.descricao}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Selecione a cor"
-            type="color"
-            name="cor"
-            value={values.cor}
-            onChange={handleChange}
-          />
-          <div>
-            <button>Cadastrar</button>
-          </div>
-        </Formulario>
+        <Loading loading={saving}>
+          {console.log('values', valoresIniciais, values)}
+
+          <Formulario onSubmit={handleSubmit}>
+            <FormField
+              label="Titulo da Categoria"
+              type="text"
+              name="titulo"
+              value={values.titulo}
+              onChange={handleChange}
+            />
+            <FormField
+              label="Link Extra (Título)"
+              type="text"
+              name="link_extra.text"
+              value={values.link_extra.text}
+              onChange={handleChange}
+            />
+            <FormField
+              label="Link Extra (Url)"
+              type="text"
+              name="link_extra.url"
+              value={values.link_extra.url}
+              onChange={handleChange}
+            />
+            <FormField
+              label="Selecione a cor"
+              type="color"
+              name="cor"
+              value={values.cor}
+              onChange={handleChange}
+            />
+            <div>
+              <button>Cadastrar</button>
+            </div>
+          </Formulario>
+        </Loading>
 
         <Loading loading={loading}>
           <Listagem>
             {categorias.map((categoria, indice) => (
               <ListagemItem key={indice}>
                 <Color cor={categoria.cor} />
-                <span>{categoria.titulo}</span> {categoria.descricao}
+                <span>{categoria.titulo}</span>{' '}
+                {categoria.link_extra ? categoria.link_extra.text : ''}
               </ListagemItem>
             ))}
           </Listagem>

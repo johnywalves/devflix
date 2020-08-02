@@ -13,7 +13,7 @@ type ResultSearchProps = {
 const ResultSearch = ({ result, loading, videos }: ResultSearchProps) => (
   <Container result={result}>
     {result && (
-      <Loading loading={loading}>
+      <Loading loading={loading} center={true}>
         <Listagem>
           {videos.length === 0 ? (
             <NotFound>Nenhum conhecimento encontrado</NotFound>

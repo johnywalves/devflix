@@ -54,13 +54,18 @@ const Home = () => {
     <Layout suppressPadding={true}>
       <BannerFronthead />
       <Loading loading={loading}>
-        {categorias.map((categoria: CategoriaProps, index: number) => (
-          <Carousel
-            key={index}
-            category={categoria}
-            highlight={categoria.id === highlight}
-          />
-        ))}
+        {categorias
+          .filter(
+            (categoria: CategoriaProps) =>
+              categoria.titulo && categoria.videos && categoria.videos.length
+          )
+          .map((categoria: CategoriaProps, index: number) => (
+            <Carousel
+              key={index}
+              category={categoria}
+              highlight={categoria.id === highlight}
+            />
+          ))}
       </Loading>
     </Layout>
   )
