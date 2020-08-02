@@ -4,6 +4,7 @@ import IconColorWheel from './components/IconColorWheel'
 
 export const FormFieldWrapper = styled.div`
   position: relative;
+  margin-bottom: 2rem;
 
   textarea {
     min-height: 150px;
@@ -20,6 +21,12 @@ export const FormFieldWrapper = styled.div`
 `
 
 export const Label = styled.label``
+
+export const ErrorMessage = styled.p`
+  color: var(--errorColor);
+  font-size: 2rem;
+  margin-top: 0.5rem;
+`
 
 export const LabelText = styled.span`
   color: var(--black);
@@ -65,7 +72,6 @@ export const Input = styled.input<InputProps>`
   border-bottom: 4px solid var(--black);
 
   padding: 16px 16px;
-  margin-bottom: 2rem;
 
   resize: none;
   border-radius: 4px;

@@ -1,13 +1,24 @@
 import React from 'react'
 
-import { FormFieldWrapper, Label, LabelText, Input, ColorWheel } from './styles'
+import {
+  FormFieldWrapper,
+  Label,
+  ErrorMessage,
+  LabelText,
+  Input,
+  ColorWheel
+} from './styles'
 
 type FormFieldProps = {
   label: string
   type: string
   name: string
   value?: string
+  error?: Array<string>
   suggestions?: Array<string>
+  onBlur: (
+    event: React.FocusEvent<HTMLInputElement & HTMLTextAreaElement>
+  ) => void
   onChange: (
     event: React.ChangeEvent<HTMLInputElement & HTMLTextAreaElement>
   ) => void
@@ -18,6 +29,8 @@ const FormField = ({
   type,
   name,
   value,
+  error,
+  onBlur,
   onChange,
   suggestions
 }: FormFieldProps) => {
@@ -39,6 +52,7 @@ const FormField = ({
           type={type}
           name={name}
           hasValue={hasValue}
+          onBlur={onBlur}
           onChange={onChange}
           autoComplete={hasSuggestions ? 'off' : 'on'}
           list={hasSuggestions ? `suggestionFor_${fieldId}` : undefined}
@@ -58,6 +72,7 @@ const FormField = ({
               ))}
           </datalist>
         )}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
       </Label>
     </FormFieldWrapper>
   )

@@ -35,6 +35,7 @@ const GlobalStyles = createGlobalStyle`
         --colorSkin: #ffb8b8;
         --colorClother: #2f2e41;
         --shadowColor: #0000003f;
+        --errorColor: #de4545;
     }
 
     body.dark {
@@ -51,6 +52,7 @@ const GlobalStyles = createGlobalStyle`
         --colorSkin: #ffb8b8;
         --colorClother: #cfcede;
         --shadowColor: #ffffff3f;
+        --errorColor: #de4545;
     }
 
     a {

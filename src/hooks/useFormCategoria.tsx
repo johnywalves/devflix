@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { CategoriaProps } from 'interfaces'
 
@@ -15,17 +15,45 @@ const index = (
   else return index(obj[is[0]], is.slice(1), value)
 }
 
-const useForm = (
-  valoresIniciais: CategoriaProps
-): [
-  CategoriaProps,
-  (event: React.ChangeEvent<HTMLInputElement>) => void,
-  () => void
-] => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const validade = (values: CategoriaProps, touched: any): any => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const errors: any = {}
+
+  if (touched.titulo) {
+    if (!values.titulo || values.titulo.length === 0) {
+      errors.titulo = 'Por favor informe o título da categoria'
+    }
+  }
+
+  if (touched['link_extra.url']) {
+    if (
+      values.link_extra.text.length === 0 &&
+      values.link_extra.url.length > 0
+    ) {
+      errors['link_extra.url'] = 'Url do link extra informado sem texto'
+    }
+  }
+
+  return errors
+}
+
+type FormProps = {
+  values: CategoriaProps
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  errors: any
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  handleBlur: (event: React.FocusEvent<HTMLInputElement>) => void
+  clearForm: () => void
+}
+
+const useFormCategoria = (valoresIniciais: CategoriaProps): FormProps => {
   const [values, setValues] = useState<CategoriaProps>({
     ...valoresIniciais,
     link_extra: { ...valoresIniciais.link_extra }
   })
+  const [errors, setErros] = useState({})
+  const [touched, setTouched] = useState({})
 
   const setValue = (chave: string, valor: string) => {
     const object = { ...values }
@@ -34,6 +62,18 @@ const useForm = (
       ...object
     })
   }
+
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    const name: string = event.target.getAttribute('name') || ''
+    setTouched({
+      ...touched,
+      [name]: true
+    })
+  }
+
+  useEffect(() => {
+    setErros(validade(values, touched))
+  }, [values, touched])
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.getAttribute('name') || '', event.target.value)
@@ -44,9 +84,10 @@ const useForm = (
       ...valoresIniciais,
       link_extra: { ...valoresIniciais.link_extra }
     })
+    setErros({})
   }
 
-  return [values, handleChange, clearForm]
+  return { values, errors, handleChange, handleBlur, clearForm }
 }
 
-export default useForm
+export default useFormCategoria

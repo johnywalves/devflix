@@ -34,7 +34,7 @@ const CadastroCategoria = () => {
   const [saving, setSaving] = useState<boolean>(false)
   const [categorias, setCategorias] = useState<Array<CategoriaProps>>([])
 
-  const [values, handleChange, clearForm] = useFormCategoria(valoresIniciais)
+  const formCategoria = useFormCategoria(valoresIniciais)
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -42,12 +42,12 @@ const CadastroCategoria = () => {
 
     categoriasRepository
       .create({
-        ...values
+        ...formCategoria.values
       })
       .then(() => {
         setSaving(false)
-        setCategorias([...categorias, values])
-        clearForm()
+        setCategorias([...categorias, formCategoria.values])
+        formCategoria.clearForm()
       })
       .catch(() => {
         setSaving(false)
@@ -63,7 +63,7 @@ const CadastroCategoria = () => {
             .filter((categoria) => categoria.id !== categoriaId)
             .map((c) => c)
         )
-        clearForm()
+        formCategoria.clearForm()
         setSaving(false)
       })
       .catch(() => {
@@ -94,29 +94,36 @@ const CadastroCategoria = () => {
               label="Titulo da Categoria"
               type="text"
               name="titulo"
-              value={values.titulo}
-              onChange={handleChange}
+              value={formCategoria.values.titulo}
+              error={formCategoria.errors.titulo}
+              onBlur={formCategoria.handleBlur}
+              onChange={formCategoria.handleChange}
             />
             <FormField
               label="Link Extra (Título)"
               type="text"
               name="link_extra.text"
-              value={values.link_extra.text}
-              onChange={handleChange}
+              value={formCategoria.values.link_extra.text}
+              error={formCategoria.errors['link_extra.text']}
+              onBlur={formCategoria.handleBlur}
+              onChange={formCategoria.handleChange}
             />
             <FormField
               label="Link Extra (Url)"
               type="text"
               name="link_extra.url"
-              value={values.link_extra.url}
-              onChange={handleChange}
+              value={formCategoria.values.link_extra.url}
+              error={formCategoria.errors['link_extra.url']}
+              onBlur={formCategoria.handleBlur}
+              onChange={formCategoria.handleChange}
             />
             <FormField
               label="Selecione a cor"
               type="color"
               name="cor"
-              value={values.cor}
-              onChange={handleChange}
+              value={formCategoria.values.cor}
+              onBlur={formCategoria.handleBlur}
+              onChange={formCategoria.handleChange}
             />
             <div>
               <button>Cadastrar</button>

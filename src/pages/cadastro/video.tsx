@@ -34,20 +34,20 @@ const CadastroVideo = ({ router }: CadastroVideoProps) => {
     ({ titulo }) => titulo || ''
   )
 
-  const [values, handleChange] = useFormVideo(valoresIniciais)
+  const formVideo = useFormVideo(valoresIniciais)
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const categoriaEscolhida = categorias.find((categoria) => {
-      return categoria.titulo === values.categoria
+      return categoria.titulo === formVideo.values.categoria
     })
 
     if (categoriaEscolhida) {
       videosRepository
         .create({
-          titulo: values.titulo,
-          url: values.url,
+          titulo: formVideo.values.titulo,
+          url: formVideo.values.url,
           categoriaId: categoriaEscolhida.id
         })
         .then(() => {
@@ -79,22 +79,28 @@ const CadastroVideo = ({ router }: CadastroVideoProps) => {
               label="Url"
               type="text"
               name="url"
-              value={values.url}
-              onChange={handleChange}
+              value={formVideo.values.url}
+              error={formVideo.errors.url}
+              onBlur={formVideo.handleBlur}
+              onChange={formVideo.handleChange}
             />
             <FormField
               label="Titulo do Vídeo"
               type="text"
               name="titulo"
-              value={values.titulo}
-              onChange={handleChange}
+              value={formVideo.values.titulo}
+              error={formVideo.errors.titulo}
+              onBlur={formVideo.handleBlur}
+              onChange={formVideo.handleChange}
             />
             <FormField
               label="Categoria"
               type="text"
               name="categoria"
-              value={values.categoria}
-              onChange={handleChange}
+              value={formVideo.values.categoria}
+              error={formVideo.errors.categoria}
+              onBlur={formVideo.handleBlur}
+              onChange={formVideo.handleChange}
               suggestions={categoryTitles}
             />
             <div>
@@ -104,11 +110,11 @@ const CadastroVideo = ({ router }: CadastroVideoProps) => {
 
           <Listagem>
             <ContainerCenter>
-              {values.url && (
+              {formVideo.values.url && (
                 <VideoCard
                   preview={true}
-                  videoTitle={values.titulo || ''}
-                  videoURL={values.url}
+                  videoTitle={formVideo.values.titulo || ''}
+                  videoURL={formVideo.values.url}
                 />
               )}
             </ContainerCenter>
