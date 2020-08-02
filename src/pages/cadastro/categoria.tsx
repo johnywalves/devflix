@@ -68,8 +68,6 @@ const CadastroCategoria = () => {
       <h1>Cadastro de Categoria</h1>
       <BoxForm>
         <Loading loading={saving}>
-          {console.log('values', valoresIniciais, values)}
-
           <Formulario onSubmit={handleSubmit}>
             <FormField
               label="Titulo da Categoria"

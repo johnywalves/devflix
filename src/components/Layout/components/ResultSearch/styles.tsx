@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 type ContainerProps = {
-  result: boolean
+  showContainer: boolean
 }
 
 export const Container = styled.div`
@@ -15,12 +15,12 @@ export const Container = styled.div`
   box-shadow: 0 5px 4px var(--shadowColor);
   z-index: 100;
   transition: height 1s;
-  height: ${({ result }: ContainerProps) =>
-    result ? 'calc(100vh - var(--bodyPaddingTop))' : '0'};
+  height: ${({ showContainer }: ContainerProps) =>
+    showContainer ? 'calc(100vh - var(--bodyPaddingTop))' : '0'};
 
   @media (max-width: 800px) {
-    height: ${({ result }: ContainerProps) =>
-      result ? 'calc(100vh - var(--bodyPaddingTop))' : '0'};
+    height: ${({ showContainer }: ContainerProps) =>
+      showContainer ? 'calc(100vh - var(--bodyPaddingTop))' : '0'};
   }
 `
 
