@@ -5,7 +5,7 @@ import { VideoProps } from 'interfaces'
 const URL_VIDEOS = `${config.URL_BACKEND_TOP}/videos`
 
 const create = (objetoDoVideo: VideoProps) => {
-  return fetch(`${URL_VIDEOS}?_embed=videos`, {
+  return fetch(`${URL_VIDEOS}`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'

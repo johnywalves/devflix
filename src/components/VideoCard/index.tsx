@@ -11,10 +11,16 @@ const getYouTubeId = (youtubeURL: string) => {
 type VideoCardProps = {
   videoTitle: string
   videoURL: string
+  highlight?: boolean
   preview?: boolean
 }
 
-const VideoCard = ({ videoTitle, videoURL, preview }: VideoCardProps) => {
+const VideoCard = ({
+  videoTitle,
+  videoURL,
+  highlight,
+  preview
+}: VideoCardProps) => {
   const image = `https://img.youtube.com/vi/${getYouTubeId(
     videoURL
   )}/hqdefault.jpg`
@@ -25,6 +31,7 @@ const VideoCard = ({ videoTitle, videoURL, preview }: VideoCardProps) => {
       target="_blank"
       preview={preview}
       title={videoTitle}
+      className={highlight ? 'highlight' : ''}
     />
   )
 }

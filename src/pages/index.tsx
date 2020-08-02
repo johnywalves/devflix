@@ -14,6 +14,7 @@ const Home = () => {
   const router = useRouter()
 
   const [loading, setLoading] = useState<boolean>(true)
+  const [highlight, setHighlight] = useState<number>(-1)
   const [categorias, setCategorias] = useState<Array<CategoriaProps>>([])
 
   useEffect(() => {
@@ -31,6 +32,7 @@ const Home = () => {
 
   useEffect(() => {
     if (!loading && router.query.newvideo) {
+      setHighlight(Number(router.query.newvideo))
       setTimeout(() => {
         const element = document.getElementById(
           `categoria_${router.query.newvideo}`
@@ -43,6 +45,7 @@ const Home = () => {
             behavior: 'smooth'
           })
         }
+        setTimeout(() => setHighlight(-1), 500)
       }, 500)
     }
   }, [loading, router.query.newvideo])
@@ -52,7 +55,11 @@ const Home = () => {
       <BannerFronthead />
       <Loading loading={loading}>
         {categorias.map((categoria: CategoriaProps, index: number) => (
-          <Carousel key={index} ignoreFirstVideo category={categoria} />
+          <Carousel
+            key={index}
+            category={categoria}
+            highlight={categoria.id === highlight}
+          />
         ))}
       </Loading>
     </Layout>

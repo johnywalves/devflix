@@ -27,6 +27,10 @@ export const VideoCardContainer = styled.a`
   margin: 32px 4px;
   z-index: 1;
 
+  &.highlight {
+    transform: scale(0);
+  }
+
   &:hover,
   &:focus {
     transform: scale(1.3);

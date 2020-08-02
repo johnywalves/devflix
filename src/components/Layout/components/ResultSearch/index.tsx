@@ -12,7 +12,6 @@ type ResultSearchProps = {
 
 const ResultSearch = ({ result, loading, videos }: ResultSearchProps) => (
   <Container result={result}>
-    {console.log('result', result)}
     {result && (
       <Loading loading={loading}>
         <Listagem>

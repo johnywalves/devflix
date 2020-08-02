@@ -8,11 +8,12 @@ import Slider, { SliderItem } from './components/Slider'
 import { CarrouselContainer, Header, Title, ExtraLink } from './styles'
 
 type CarrouselProps = {
-  ignoreFirstVideo: boolean
+  ignoreFirstVideo?: boolean
   category: CategoriaProps
+  highlight: boolean
 }
 
-function Carrousel({ ignoreFirstVideo, category }: CarrouselProps) {
+function Carrousel({ ignoreFirstVideo, highlight, category }: CarrouselProps) {
   const categoriaId = `categoria_${category.id || 0}`
   const categoryTitle = category.titulo
   const categoryColor = category.cor
@@ -39,7 +40,11 @@ function Carrousel({ ignoreFirstVideo, category }: CarrouselProps) {
 
             return (
               <SliderItem key={video.titulo}>
-                <VideoCard videoTitle={video.titulo} videoURL={video.url} />
+                <VideoCard
+                  videoTitle={video.titulo}
+                  videoURL={video.url}
+                  highlight={highlight && index === 0}
+                />
               </SliderItem>
             )
           })}
