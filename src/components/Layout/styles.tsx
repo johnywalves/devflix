@@ -10,6 +10,7 @@ export const Main = styled.main`
   flex: 1;
   padding: ${({ suppressPadding }: MainProps) =>
     suppressPadding ? '0' : '2rem 5% 0'};
+  animation: fadeIn 0.5s both;
 
   h1 {
     font-size: 3rem;
@@ -24,5 +25,14 @@ export const Main = styled.main`
 
   section:nth-child(2n + 1) {
     background-color: var(--background);
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 `

@@ -1,7 +1,18 @@
 import { AppProps } from 'next/app'
+// eslint-disable-next-line import/no-named-as-default
+import Router from 'next/router'
 import Head from 'next/head'
+// eslint-disable-next-line import/no-named-as-default
+import NProgress from 'nprogress'
 
 import GlobalStyles from 'styles/global'
+
+Router.events.on('routeChangeStart', (url) => {
+  console.log(`Loading: ${url}`)
+  NProgress.start()
+})
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -19,6 +30,7 @@ function App({ Component, pageProps }: AppProps) {
           name="description"
           content="Plataforma para compartilhamento de conhecimento sobre desenvolvimento de software em língua brasileira"
         />
+        <link rel="stylesheet" type="text/css" href="/nprogress.css" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
