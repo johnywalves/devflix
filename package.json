@@ -30,10 +30,10 @@
   "dependencies": {
     "json-server": "^0.16.1",
     "next": "9.4.4",
-    "next-pwa": "^3.1.0",
+    "next-pwa": "^3.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-slick": "^0.27.1",
+    "react-slick": "^0.27.4",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
@@ -45,7 +45,7 @@
     "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^5.3.19",
     "@testing-library/jest-dom": "^5.11.2",
-    "@testing-library/react": "^10.4.7",
+    "@testing-library/react": "^10.4.8",
     "@types/jest": "26.0.7",
     "@types/node": "14.0.26",
     "@types/react": "^16.9.43",
@@ -64,7 +64,7 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^4.2.5",
-    "jest": "^26.1.0",
+    "jest": "^26.2.2",
     "jest-styled-components": "^7.0.2",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
