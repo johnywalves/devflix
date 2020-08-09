@@ -30,7 +30,7 @@
   "dependencies": {
     "json-server": "^0.16.1",
     "next": "9.4.4",
-    "next-pwa": "^3.1.0",
+    "next-pwa": "^3.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-slick": "^0.27.1",
