@@ -2188,10 +2188,10 @@
     dom-accessibility-api "^0.4.6"
     pretty-format "^25.5.0"
 
-"@testing-library/jest-dom@^5.11.1":
-  version "5.11.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.1.tgz#b9541d7625cec9e5feb647f49a96c43f7c055cdd"
-  integrity sha512-NHOHjDwyBoqM7mXjNLieSp/6vJ17DILzhNTw7+RarluaBkyWRzWgFj+d6xnd1adMBlwfQSeR2FWGTxHXCxeMSA==
+"@testing-library/jest-dom@^5.11.2":
+  version "5.11.2"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.2.tgz#c49de331555c70127b5d7fc97344ad5265f4c54c"
+  integrity sha512-s+rWJx+lanEGKqvOl4qJR0rGjCrxsEjj9qjxFlg4NV4/FRD7fnUUAWPHqwpyafNHfLYArs58FADgdn4UKmjFmw==
   dependencies:
     "@babel/runtime" "^7.9.2"
     "@types/testing-library__jest-dom" "^5.9.1"
@@ -2443,13 +2443,13 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.43":
-  version "16.9.43"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.43.tgz#c287f23f6189666ee3bebc2eb8d0f84bcb6cdb6b"
-  integrity sha512-PxshAFcnJqIWYpJbLPriClH53Z2WlJcVZE+NP2etUtWQs2s7yIMj3/LDKZT/5CHJ/F62iyjVCDu2H3jHEXIxSg==
+"@types/react@*", "@types/react@^16.9.45":
+  version "16.9.45"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.45.tgz#b43ccf3d8a3d2020e6a48c8c8492e5a4bc10f097"
+  integrity sha512-vv950slTF5UZ5eDOf13b8qC1SD4rTvkqg3HfaUKzr17U97oeJZAa+dUaIHn0QoOJflNTIt6Pem9MmapULs9dkA==
   dependencies:
     "@types/prop-types" "*"
-    csstype "^2.2.0"
+    csstype "^3.0.2"
 
 "@types/reactcss@*":
   version "1.2.3"
@@ -5008,6 +5008,11 @@ csstype@^2.2.0, csstype@^2.5.7, csstype@^2.6.7:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.11.tgz#452f4d024149ecf260a852b025e36562a253ffc5"
   integrity sha512-l8YyEC9NBkSm783PFTvh0FmJy7s5pFKrDp49ZL7zBGX3fWkO+N4EEyan1qqp8cwPLDcD0OSdyY6hAMoxp34JFw==
+
+csstype@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.2.tgz#ee5ff8f208c8cd613b389f7b222c9801ca62b3f7"
+  integrity sha512-ofovWglpqoqbfLNOTBNZLSbMuGrblAf1efvvArGKOZMBrIoJeu5UsAipQolkijtyQx5MtAzT/J9IHj/CEY1mJw==
 
 cyclist@^1.0.1:
   version "1.0.1"
@@ -9232,10 +9237,10 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-next-pwa@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/next-pwa/-/next-pwa-3.1.0.tgz#44eacd2680704b65afc085a15df2d37476a4283f"
-  integrity sha512-59W1mWQ8pTNAzMZIgaUZHQjUXwcTaf1nEfgYKvzG2bl8H2SmC4iYcJAG7gMFEW3lUTdjzT7rA3274+CrdrdM0g==
+next-pwa@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/next-pwa/-/next-pwa-3.1.1.tgz#cbfc0627824da0ea834913a3c39b6387cd209b2c"
+  integrity sha512-IZIrI/x2iQUdTs8giz998rwaMhQWSlsfE3JWfumCB0eQ//V7Ejx1lRtfhZ4fzi8hKVFtXINVVKXjNlNejrlqCw==
   dependencies:
     clean-webpack-plugin "^3.0.0"
     globby "^11.0.0"
