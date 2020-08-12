@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState, useRef } from 'react'
 
-import videosRepository from 'repositories/videos'
 import { VideoProps } from 'interfaces'
+import videosRepository from 'repositories/videos'
 
 const useQueryVideos = (): [boolean, boolean, Array<VideoProps>] => {
   const timerRef = useRef<number | null>(null)

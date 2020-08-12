@@ -1,7 +1,6 @@
 import React from 'react'
 
 import VideoCard from 'components/VideoCard'
-
 import { CategoriaProps, VideoProps } from 'interfaces'
 
 import Slider, { SliderItem } from './components/Slider'

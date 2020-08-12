@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Container, Input, IconInput, IconClean } from './styles'
 
-import IconSearch from 'icons/IconSearch'
 import IconClose from 'icons/IconClose'
+import IconSearch from 'icons/IconSearch'
+
+import { Container, Input, IconInput, IconClean } from './styles'
 
 const Search = () => {
   const [textSearch, setTextSearch] = useState<string>('')

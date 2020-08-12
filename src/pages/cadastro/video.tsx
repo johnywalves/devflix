@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { NextRouter, withRouter } from 'next/router'
 
-import Layout from 'components/Layout'
 import FormField from 'components/FormField'
-import Loading from 'components/Loading'
-import VideoCard from 'components/VideoCard'
 import {
   Formulario,
   ButtonForm,
@@ -12,11 +8,14 @@ import {
   Listagem,
   ContainerCenter
 } from 'components/Formulario'
-
-import categoriasRepository from 'repositories/categorias'
-import videosRepository from 'repositories/videos'
+import Layout from 'components/Layout'
+import Loading from 'components/Loading'
+import VideoCard from 'components/VideoCard'
 import useFormVideo from 'hooks/useFormVideo'
 import { CategoriaProps, VideoProps } from 'interfaces'
+import { NextRouter, withRouter } from 'next/router'
+import categoriasRepository from 'repositories/categorias'
+import videosRepository from 'repositories/videos'
 
 const valoresIniciais: VideoProps = {
   titulo: '',

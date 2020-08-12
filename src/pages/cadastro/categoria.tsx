@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import Layout from 'components/Layout'
 import FormField from 'components/FormField'
-import Loading from 'components/Loading'
 import {
   Formulario,
   ButtonForm,
@@ -14,11 +12,12 @@ import {
   Color,
   ButtonRemove
 } from 'components/Formulario'
-
-import IconTrash from 'icons/IconTrash'
-import categoriasRepository from 'repositories/categorias'
+import Layout from 'components/Layout'
+import Loading from 'components/Loading'
 import useFormCategoria from 'hooks/useFormCategoria'
+import IconTrash from 'icons/IconTrash'
 import { CategoriaProps } from 'interfaces'
+import categoriasRepository from 'repositories/categorias'
 
 const valoresIniciais: CategoriaProps = {
   id: 0,

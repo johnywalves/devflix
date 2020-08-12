@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { VideoCardContainer } from './styles'
 
 const getYouTubeId = (youtubeURL: string) => {
@@ -24,6 +25,7 @@ const VideoCard = ({
   const image = `https://img.youtube.com/vi/${getYouTubeId(
     videoURL
   )}/hqdefault.jpg`
+
   return (
     <VideoCardContainer
       url={image}

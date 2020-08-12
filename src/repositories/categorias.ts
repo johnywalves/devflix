@@ -1,5 +1,5 @@
-import { CategoriaProps } from 'interfaces'
 import config from 'config'
+import { CategoriaProps } from 'interfaces'
 
 const URL_CATEGORIES = `${config.URL_BACKEND_TOP}/categorias`
 

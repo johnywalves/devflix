@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { NextRouter, withRouter } from 'next/router'
-import Link from 'next/link'
 
 import Button from 'components/Button'
+import Link from 'next/link'
+import { NextRouter, withRouter } from 'next/router'
 
 import Search from '../Search'
 import { Nav, Logo, Commands, Astro } from './styles'

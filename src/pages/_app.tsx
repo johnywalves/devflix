@@ -1,13 +1,13 @@
 import { AppProps } from 'next/app'
 // eslint-disable-next-line import/no-named-as-default
-import Router from 'next/router'
 import Head from 'next/head'
 // eslint-disable-next-line import/no-named-as-default
+import Router from 'next/router'
+// eslint-disable-next-line import/no-named-as-default
 import NProgress from 'nprogress'
-
 import GlobalStyles from 'styles/global'
 
-Router.events.on('routeChangeStart', (url) => {
+Router.events.on('routeChangeStart', (url: string) => {
   console.log(`Loading: ${url}`)
   NProgress.start()
 })

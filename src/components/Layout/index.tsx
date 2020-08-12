@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
-import Menu from 'components/Menu'
 import Footer from 'components/Footer'
+import Menu from 'components/Menu'
 import useQueryVideos from 'hooks/useQueryVideos'
 
 import ResultSearch from './components/ResultSearch'

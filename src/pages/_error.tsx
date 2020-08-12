@@ -1,5 +1,5 @@
-import Layout from 'components/Layout'
 import { Container, Illustration, Description } from 'components/Error'
+import Layout from 'components/Layout'
 
 const HandleError = () => (
   <Layout>
