@@ -10989,10 +10989,10 @@ react-sizeme@^2.6.7:
     shallowequal "^1.1.0"
     throttle-debounce "^2.1.0"
 
-react-slick@^0.27.6:
-  version "0.27.6"
-  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.27.6.tgz#ea8d7132948cfe92e50a05733836ca2b85ccf188"
-  integrity sha512-0JKKBNBQuMtYdUVAU/YyEoyuLLQlSaypkTxdv2gp1y9d5YvN2OcHS6M9oV7TTj51teabiHT7mhXOasxfX0TZBA==
+react-slick@^0.27.7:
+  version "0.27.7"
+  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.27.7.tgz#e6e3c3f8549b1144d4411fbaae3cbe04d2b4378d"
+  integrity sha512-AV/u36fqd/ZUNa3yampB2d/VPIaKvb6baX9g1plDJrPS2g6fE3pfsx57yFZyqhQHKjM5qgO2S1trtH4hvcDGCQ==
   dependencies:
     classnames "^2.2.5"
     enquire.js "^2.1.6"
