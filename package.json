@@ -28,7 +28,7 @@
     ]
   },
   "dependencies": {
-    "json-server": "^0.16.2",
+    "json-server": "^0.16.3",
     "next": "10.0.1",
     "next-pwa": "^3.1.5",
     "nprogress": "^0.2.0",
