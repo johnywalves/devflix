@@ -25,7 +25,7 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content={manifest.theme_color} />
 
         <title>{manifest.short_name}</title>
-        <meta name="title" content={manifest.short_name} />
+        <meta name="title" itemProp="title" content={manifest.short_name} />
         <meta name="description" content={manifest.description} />
 
         <meta property="og:type" content="website" />

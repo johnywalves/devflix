@@ -1,6 +1,6 @@
 ![Devflix](https://raw.githubusercontent.com/johnywalves/devflix/master/public/img/logo.png)
 
-![Thumbnail](https://devflix.johnywalves.com.br/img/thumbnail.png)
+![Thumbnail](https://raw.githubusercontent.com/johnywalves/devflix/master/public/img/thumbnail.jpg)
 
 ## Plataforma para compartilhamento de conhecimento sobre desenvolvimento de software em língua brasileira
 

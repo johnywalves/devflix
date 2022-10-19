@@ -38,7 +38,7 @@ export const Logo = styled.img`
   margin-bottom: 2rem;
 `
 
-export const Title = styled.h1`
+export const Subtitle = styled.p`
   color: var(--black);
   font-size: 4rem;
   margin-bottom: 1rem;

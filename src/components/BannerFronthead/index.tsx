@@ -1,16 +1,16 @@
 import React from 'react'
 
-import { Container, Explain, Title, Description, Draw, Logo } from './styles'
+import { Container, Explain, Subtitle, Description, Draw, Logo } from './styles'
 
 const BannerFronthead = () => {
   return (
     <Container>
       <Explain>
-        <Logo id="logo_forehead" src="/img/logo.png" />
-        <Title>
+        <Logo id="logo_forehead" aria-label="Devflix" src="/img/logo.png" />
+        <Subtitle>
           Plataforma para compartilhamento de conhecimento sobre{' '}
           <span>desenvolvimento</span> de software em língua brasileira
-        </Title>
+        </Subtitle>
         <Description>
           Desenvolvido por{' '}
           <a href="https://johnywalves.com.br" target="_blank" rel="noreferrer">
