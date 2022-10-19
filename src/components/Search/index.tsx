@@ -28,7 +28,7 @@ const Search = () => {
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.code === 'Escape' && window.__clearSearchText) {
+      if (event.code === 'Escape') {
         handleClose()
       }
     }

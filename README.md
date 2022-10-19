@@ -19,4 +19,4 @@ yarn
 yarn dev
 ```
 
-O projeto disponível em [http://localhost:3000](http://localhost:3000) com o servidor de dados em [http://localhost:8080/categorias](http://localhost:8080/categorias) e [http://localhost:8080/videos](http://localhost:8080/videos)
+O projeto disponível em [http://localhost:3000](http://localhost:3000) com o servidor de dados em [http://localhost:8090/categorias](http://localhost:8090/categorias) e [http://localhost:8090/videos](http://localhost:8090/videos)

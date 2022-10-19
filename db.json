@@ -186,6 +186,18 @@
       "categoriaId": 5,
       "titulo": "Resident Evil 8",
       "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
+    },
+    {
+      "titulo": "The Super Mario Bros. Movie | Official Teaser Trailer",
+      "url": "https://www.youtube.com/watch?v=KydqdKKyGEk&ab_channel=Illumination",
+      "categoriaId": 4,
+      "id": 25
+    },
+    {
+      "titulo": "Cyberpunk 2077 Teaser Trailer",
+      "url": "https://www.youtube.com/watch?v=P99qJGrPNLs",
+      "categoriaId": 5,
+      "id": 26
     }
   ]
 }

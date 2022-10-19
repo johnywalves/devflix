@@ -1,6 +1,11 @@
 {
   "name": "Devflix",
   "short_name": "Devflix",
+  "description": "Plataforma para compartilhamento de conhecimento sobre desenvolvimento de software em língua brasileira",
+  "background_color": "#06092B",
+  "theme_color": "#06092B",
+  "start_url": "/",
+  "public_url": "https://devflix.johnywalves.com.br",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -13,9 +18,5 @@
       "sizes": "512x512"
     }
   ],
-  "background_color": "#06092B",
-  "description": "Plataforma para compartilhamento de conhecimento sobre desenvolvimento de software em língua brasileira",
-  "display": "fullscreen",
-  "start_url": "/",
-  "theme_color": "#06092B"
+  "thumbnail": "https://devflix.johnywalves.com.br/img/thumbnail.png"
 }

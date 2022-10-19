@@ -4,7 +4,7 @@ import { VideoProps } from 'interfaces'
 import videosRepository from 'repositories/videos'
 
 const useQueryVideos = (): [boolean, boolean, Array<VideoProps>] => {
-  const timerRef = useRef<number | null>(null)
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
 
   const [loading, setLoading] = useState<boolean>(false)
   const [result, setResult] = useState<boolean>(false)

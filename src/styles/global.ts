@@ -12,8 +12,10 @@ const GlobalStyles = createGlobalStyle`
         font-size: 62.5%;
     }
 
-    html, body, #__next {
-        height: 100%;
+    html,
+    body,
+    #__next {
+        height: 100vh;
     }
 
     body {
@@ -22,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        --primary: #ec1d8c;
+        --primary: #e0138c;
         --black: #3a3a3a;
         --blackLighter: #9E9E9E;
         --grayLight: #F5F5F5;
@@ -41,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body.dark {
-        --primary: #ec1d8c;
+        --primary: #e0138c;
         --black: #FFFFFF;
         --blackLighter: #DFDFDF;
         --grayLight: #F5F5F5;
