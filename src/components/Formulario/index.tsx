@@ -22,10 +22,10 @@ export const Formulario = styled.form`
 `
 
 type ButtonFormProps = {
-  disabled: boolean
+  $disabled: boolean
 }
 
-export const ButtonForm = styled.button`
+export const ButtonForm = styled.button<ButtonFormProps>`
   border: none;
   border-radius: 0.5rem;
   font-size: 2.5rem;
@@ -36,8 +36,8 @@ export const ButtonForm = styled.button`
   color: #ffffff;
   transition: opacity 0.3s;
 
-  ${({ disabled }: ButtonFormProps) =>
-    disabled &&
+  ${({ $disabled }) =>
+    $disabled &&
     css`
       opacity: 0.5;
     `}
@@ -105,12 +105,12 @@ type ColorProps = {
   cor: string
 }
 
-export const Color = styled.div`
+export const Color = styled.div<ColorProps>`
   display: table;
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
-  background-color: ${({ cor }: ColorProps) => cor};
+  background-color: ${({ cor }) => cor};
   margin: auto 1.5rem auto 0;
 `
 

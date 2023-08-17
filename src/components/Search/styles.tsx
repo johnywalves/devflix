@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components'
 
 type ContainerProps = {
-  hasValue: boolean
+  $hasValue: boolean
 }
 
-export const Container = styled.div`
+export const Container = styled.div<ContainerProps>`
   position: relative;
   opacity: 0.5;
   border: none;
@@ -16,8 +16,8 @@ export const Container = styled.div`
     opacity: 1;
   }
 
-  ${({ hasValue }: ContainerProps) =>
-    hasValue &&
+  ${({ $hasValue }) =>
+    $hasValue &&
     css`
       border-bottom: 2px solid var(--primary);
       opacity: 1;
@@ -28,7 +28,7 @@ type InputProps = {
   value: string
 }
 
-export const Input = styled.input`
+export const Input = styled.input<InputProps>`
   color: var(--black);
   background-color: transparent;
   font-size: 1.8rem;
@@ -42,7 +42,7 @@ export const Input = styled.input`
     width: 25rem;
   }
 
-  ${({ value }: InputProps) =>
+  ${({ value }) =>
     value.length &&
     css`
       width: 25rem;

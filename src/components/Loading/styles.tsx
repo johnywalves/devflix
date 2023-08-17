@@ -1,18 +1,18 @@
 import styled, { css } from 'styled-components'
 
 type LoadingBoxProps = {
-  center?: boolean
+  $center?: boolean
 }
 
-export const LoadingBox = styled.section`
+export const LoadingBox = styled.section<LoadingBoxProps>`
   margin-bottom: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--background) !important;
 
-  ${({ center }: LoadingBoxProps) =>
-    center &&
+  ${({ $center }) =>
+    $center &&
     css`
       height: calc(100% - var(--bodyPaddingTop));
     `}

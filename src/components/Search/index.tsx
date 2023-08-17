@@ -40,7 +40,7 @@ const Search = () => {
   const hasValue = textSearch !== ''
 
   return (
-    <Container hasValue={hasValue}>
+    <Container $hasValue={hasValue}>
       <Input
         type="text"
         id="search"

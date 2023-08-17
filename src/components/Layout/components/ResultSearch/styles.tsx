@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 type ContainerProps = {
-  showContainer: boolean
+  $showContainer: boolean
 }
 
-export const Container = styled.div`
+export const Container = styled.div<ContainerProps>`
   background: var(--background);
   overflow-x: hidden;
   overflow-y: auto;
@@ -15,12 +15,12 @@ export const Container = styled.div`
   box-shadow: 0 5px 4px var(--shadowColor);
   z-index: 100;
   transition: height 1s;
-  height: ${({ showContainer }: ContainerProps) =>
-    showContainer ? 'calc(100vh - var(--bodyPaddingTop))' : '0'};
+  height: ${({ $showContainer }) =>
+    $showContainer ? 'calc(100vh - var(--bodyPaddingTop))' : '0'};
 
   @media (max-width: 800px) {
-    height: ${({ showContainer }: ContainerProps) =>
-      showContainer ? 'calc(100vh - var(--bodyPaddingTop))' : '0'};
+    height: ${({ $showContainer }) =>
+      $showContainer ? 'calc(100vh - var(--bodyPaddingTop))' : '0'};
   }
 `
 

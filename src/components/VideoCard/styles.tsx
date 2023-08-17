@@ -2,18 +2,18 @@ import styled, { css } from 'styled-components'
 
 type VideoCardContainerProps = {
   index?: number
-  url: string
-  preview?: boolean
+  $url: string
+  $preview?: boolean
 }
 
-export const VideoCardContainer = styled.a`
+export const VideoCardContainer = styled.a<VideoCardContainerProps>`
   overflow: visible;
   cursor: pointer;
   color: white;
   flex: 0 0 384px;
   width: 384px;
   height: 215px;
-  background-image: ${({ url }: VideoCardContainerProps) => `url(${url})`};
+  background-image: ${({ $url }) => `url(${$url})`};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,8 +38,8 @@ export const VideoCardContainer = styled.a`
     z-index: 5;
   }
 
-  ${({ preview }: VideoCardContainerProps) => {
-    return preview
+  ${({ $preview }: VideoCardContainerProps) => {
+    return $preview
       ? css`
           margin: 24px 4px;
         `

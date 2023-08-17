@@ -54,7 +54,7 @@ export const LabelText = styled.span`
 type InputProps = {
   type: string
   value?: string
-  hasValue: boolean
+  $hasValue: boolean
   autoComplete: string
   list?: string
 }
@@ -93,9 +93,9 @@ export const Input = styled.input<InputProps>`
   }
 
   ${({ value }: InputProps) => {
-    const hasValue = value && value.length > 0
+    const $hasValue = value && value.length > 0
     return (
-      hasValue &&
+      $hasValue &&
       css`
         &:not([type='color']) + ${LabelText} {
           transform: scale(0.6) translateY(-10px);

@@ -28,10 +28,10 @@ const VideoCard = ({
 
   return (
     <VideoCardContainer
-      url={image}
+      $url={image}
       href={videoURL}
       target="_blank"
-      preview={preview}
+      $preview={preview}
       title={videoTitle}
       className={highlight ? 'highlight' : ''}
     />

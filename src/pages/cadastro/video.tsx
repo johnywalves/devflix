@@ -113,7 +113,7 @@ const CadastroVideo = ({ router }: CadastroVideoProps) => {
               suggestions={suggestions.categoria}
             />
             <div>
-              <ButtonForm disabled={!formVideo.submittable}>
+              <ButtonForm $disabled={!formVideo.submittable}>
                 Cadastrar
               </ButtonForm>
             </div>

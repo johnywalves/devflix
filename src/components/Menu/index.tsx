@@ -60,7 +60,7 @@ const Menu = ({ router, result }: MenuProps) => {
         <Logo
           className="Logo"
           src={'/img/logo.png'}
-          viewForehead={result ? false : viewForehead}
+          $viewForehead={result ? false : viewForehead}
         />
       </Link>
       <Commands>

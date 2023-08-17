@@ -18,11 +18,12 @@ function Carrousel({ ignoreFirstVideo, highlight, category }: CarrouselProps) {
   const categoryColor = category.cor
   const categoryExtraLink = category.link_extra
   const videos = (category.videos || []).map((v) => v).reverse()
+
   return (
     <CarrouselContainer id={categoriaId}>
       {categoryTitle && (
         <Header>
-          <Title categoryColor={categoryColor}>{categoryTitle}</Title>
+          <Title $categoryColor={categoryColor}>{categoryTitle}</Title>
           {categoryExtraLink && (
             <ExtraLink href={categoryExtraLink.url} target="_blank">
               {categoryExtraLink.text}

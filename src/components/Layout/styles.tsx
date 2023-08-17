@@ -1,15 +1,14 @@
 import styled from 'styled-components'
 
 type MainProps = {
-  suppressPadding?: boolean
+  $suppressPadding?: boolean
 }
 
-export const Main = styled.main`
+export const Main = styled.main<MainProps>`
   background-color: var(--background);
   color: var(--black);
   flex: 1;
-  padding: ${({ suppressPadding }: MainProps) =>
-    suppressPadding ? '0' : '2rem 5% 0'};
+  padding: ${({ $suppressPadding }) => ($suppressPadding ? '0' : '2rem 5% 0')};
   animation: fadeIn 0.5s both;
 
   h1 {

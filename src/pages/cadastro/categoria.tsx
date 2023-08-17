@@ -125,7 +125,7 @@ const CadastroCategoria = () => {
               onChange={formCategoria.handleChange}
             />
             <div>
-              <ButtonForm disabled={!formCategoria.submittable}>
+              <ButtonForm $disabled={!formCategoria.submittable}>
                 Cadastrar
               </ButtonForm>
             </div>

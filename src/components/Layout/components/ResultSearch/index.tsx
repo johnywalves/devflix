@@ -11,7 +11,7 @@ type ResultSearchProps = {
 }
 
 const ResultSearch = ({ result, loading, videos }: ResultSearchProps) => (
-  <Container showContainer={result}>
+  <Container $showContainer={result}>
     {result && (
       <Loading loading={loading} center={true}>
         <Listagem>

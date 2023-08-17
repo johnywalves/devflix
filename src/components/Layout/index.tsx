@@ -18,7 +18,7 @@ const Layout = ({ children, suppressPadding }: LayoutProps) => {
   return (
     <>
       <Menu result={result} />
-      <Main suppressPadding={suppressPadding}>{children}</Main>
+      <Main $suppressPadding={suppressPadding}>{children}</Main>
       <ResultSearch result={result} loading={loading} videos={videos} />
       <Footer />
     </>

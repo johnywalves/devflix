@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 type TitleProps = {
-  categoryColor: string
+  $categoryColor: string
 }
 
 export const Header = styled.header`
   padding-left: 5%;
 `
 
-export const Title = styled.h3`
+export const Title = styled.h3<TitleProps>`
   color: var(--black);
   position: relative;
   font-style: normal;
@@ -27,7 +27,7 @@ export const Title = styled.h3`
     left: 0;
     width: 1rem;
     height: calc(100% - 40px);
-    background-color: ${({ categoryColor }: TitleProps) => categoryColor};
+    background-color: ${({ $categoryColor }) => $categoryColor};
   }
 
   @media (max-width: 800px) {
