@@ -6,16 +6,25 @@
 
 Desenvolvido por [Johny W. Alves](https://johnywalves.com.br/) durante a [Imersão React da Alura](https://alura.com.br/) com a orientação do [Mario Souto](https://www.linkedin.com/in/omariosouto/), [Juliana Negreiros](https://www.linkedin.com/in/juliananegreiros/) e [Marco Bruno](https://www.linkedin.com/in/marcobrunobr/)
 
-## Executar o projeto
+## Instalar dependências 
 
 Instalar [Node](https://nodejs.org/en/) e executar com o gerenciador de pacotes
 
 ```bash
 # Para usuários de npm
 npm i
-npm run dev
 # ou para usuários yarn
 yarn
+```
+
+## Executar o projeto
+
+Com as dependências instaladas
+
+```bash
+# Para usuários de npm
+npm run dev
+# ou para usuários yarn
 yarn dev
 ```
 
