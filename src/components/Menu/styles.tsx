@@ -40,12 +40,17 @@ export const Astro = styled.div`
   transition: all 0.5s cubic-bezier(0, 0.92, 0.27, 0.82);
   cursor: pointer;
   background-color: var(--background);
-  box-shadow: inset 2px -2px 0px 0px #ffffff, inset 8px -8px 0px 0px #d8e8f7;
+  box-shadow:
+    inset 2px -2px 0px 0px #ffffff,
+    inset 8px -8px 0px 0px #d8e8f7;
 
   .light & {
     background-color: #ffdb01 !important;
-    box-shadow: inset -4px 0px 0px #ff8603, inset 2px 0px 0px #ffffffcc,
-      inset -5px 0px 0px 2px #ffd201, 0px 0px 0px 8px #ffd20133;
+    box-shadow:
+      inset -4px 0px 0px #ff8603,
+      inset 2px 0px 0px #ffffffcc,
+      inset -5px 0px 0px 2px #ffd201,
+      0px 0px 0px 8px #ffd20133;
   }
 `
 

@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext
 } from 'next/document'
+
 import { ServerStyleSheet } from 'styled-components'
 
 type ThemeChangeType = () => void

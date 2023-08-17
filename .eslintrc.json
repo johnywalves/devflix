@@ -1,65 +1,62 @@
 {
     "env": {
-        "browser": true,
-        "es2020": true,
-        "jest": true,
-        "node": true
+      "browser": true,
+      "es2020": true,
+      "jest": true,
+      "node": true
     },
     "settings": {
-        "react": {
-            "version": "detect"
-        }
+      "react": {
+        "version": "detect"
+      }
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended",
-        "plugin:@next/next/recommended"
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "plugin:@next/next/recommended",
+      "plugin:storybook/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 11,
-        "sourceType": "module"
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 11,
+      "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "react-hooks",
-        "import",
-        "import-helpers",
-        "@typescript-eslint"
+      "react",
+      "react-hooks",
+      "import",
+      "import-helpers",
+      "@typescript-eslint"
     ],
     "rules": {
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "react/prop-types": "off",
-        "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "import-helpers/order-imports": [
-            "warn",
-            {
-                "newlinesBetween": "always",
-                "groups": [
-                    "/^react/",
-                    [
-                        "/^@/",
-                        "module"
-                    ],
-                    [
-                        "parent",
-                        "sibling",
-                        "index"
-                    ]
-                ],
-                "alphabetize": {
-                    "order": "asc",
-                    "ignoreCase": true
-                }
-            }
-        ]
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "import-helpers/order-imports": [
+        "warn",
+        {
+          "newlinesBetween": "always",
+          "groups": [
+            "/^react/",
+            "/^next/",
+            ["/^@/", "module"],
+            "parent",
+            ["sibling", "index"]
+          ],
+          "alphabetize": {
+            "order": "asc",
+            "ignoreCase": true
+          }
+        }
+      ]
     }
-}
+  }
+  

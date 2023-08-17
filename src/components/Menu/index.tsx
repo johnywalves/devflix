@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 
-import Button from 'components/Button'
 import Link from 'next/link'
 import { NextRouter, withRouter } from 'next/router'
 
+import Button from 'components/Button'
+
 import Search from '../Search'
+
 import { Nav, Logo, Commands, Astro } from './styles'
 
 type MenuProps = {
